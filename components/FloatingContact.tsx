@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-const WA_URL = "https://wa.me/447486494947"
+const WA_URL = "https://api.whatsapp.com/send/?phone=447486494947&text=I+came+from+your+google+ads&type=phone_number&app_absent=0"
 const PHONE_URL = "tel:+447486494947"
 const PHONE_DISPLAY = "07486 494947"
 

@@ -599,7 +599,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="h-12 px-8 font-semibold group" asChild>
-                <a href="https://wa.me/447486494947?text=I%20came%20from%20your%20google%20ads" target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+                <a href="https://api.whatsapp.com/send/?phone=447486494947&text=I+came+from+your+google+ads&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
               </Button>
               <Button size="lg" variant="whatsapp" className="h-12 px-8 font-semibold" asChild>
                 <a href="https://wa.me/447486494947">WhatsApp Us</a>
@@ -865,7 +865,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" variant="secondary" className="h-12 px-8 font-semibold" asChild>
-              <a href="https://wa.me/447486494947?text=I%20came%20from%20your%20google%20ads" target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+              <a href="https://api.whatsapp.com/send/?phone=447486494947&text=I+came+from+your+google+ads&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
             </Button>
             <Button size="lg" variant="outline" className="h-12 px-8 font-semibold border-white text-white hover:bg-white hover:text-accent" asChild>
               <a href="tel:+447486494947">Call Us Direct</a>
