@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import {
   ShieldCheck, Users, Award, CheckCircle2,
-  Star, Quote, Camera, HardHat, BadgeCheck, Hammer,
+  Star, Quote, Camera, BadgeCheck, Hammer,
   Home, Droplets, ChevronRight, Phone
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -250,9 +250,6 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member, i) => (
             <div key={i} className="rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all">
-              <div className="aspect-[4/3] bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                <HardHat className="w-20 h-20 text-white/20" />
-              </div>
               <div className="p-8 space-y-3">
                 <div>
                   <h3 className="text-xl font-semibold">{member.name}</h3>

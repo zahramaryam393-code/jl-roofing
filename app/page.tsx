@@ -213,10 +213,9 @@ export default function LandingPage() {
       {/* Why Choose Us */}
       <Section className="bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-square rounded-[3rem] bg-slate-100 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-              <ShieldCheck className="w-32 h-32 text-slate-400 opacity-50" />
-            </div>
+          <div className="relative aspect-square rounded-[3rem] overflow-hidden">
+            <Image src="/roof-install.jpg" alt="JL Roofing team at work" fill className="object-cover" />
+            <div className="absolute inset-0 bg-primary/20" />
             <div className="absolute bottom-8 left-8 right-8 p-8 rounded-3xl bg-white/90 backdrop-blur-md shadow-xl border border-white">
               <div className="flex gap-4 items-center">
                 <div className="flex -space-x-4">
