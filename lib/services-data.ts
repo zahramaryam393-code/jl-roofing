@@ -49,10 +49,6 @@ export const servicesData: ServiceData[] = [
     galleryItems: [
       { label: "New Slate Roof Completed", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
       { label: "Ridge Tile Bedding & Pointing", category: "Ridge Work", bg: "from-zinc-600 to-zinc-800", image: "/roof-install-3.jpg" },
-      { label: "Felt & Batten Layer", category: "Prep Work", bg: "from-stone-600 to-stone-800" },
-      { label: "Hip Roof Completion", category: "Hip Roofing", bg: "from-slate-500 to-slate-700" },
-      { label: "Lead Valley Detail", category: "Leadwork", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Tiled Roof — Side Elevation", category: "Tile Work", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "How long does a full roof installation take?", answer: "Most standard residential roofs take 2–5 days depending on size and complexity. We'll give you an accurate timeframe in your quote." },
@@ -84,8 +80,6 @@ export const servicesData: ServiceData[] = [
       { label: "Lead Flashings Renewed", category: "Leadwork", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair-2.jpg" },
       { label: "Storm Damage Repaired", category: "Storm Repair", bg: "from-stone-600 to-stone-800", image: "/roof-repair-3.jpg" },
       { label: "Ridge Tile Re-Bedded", category: "Ridge Repair", bg: "from-slate-500 to-slate-700", image: "/roof-repair-4.jpg" },
-      { label: "Slipped Slate Fixed", category: "Slate Repair", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Leak Source Identified", category: "Investigation", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "How quickly can you respond to a roof leak?", answer: "For serious leaks we aim to attend the same day or within 24 hours. For non-urgent repairs, we're usually with you within 2–3 working days." },
@@ -149,9 +143,6 @@ export const servicesData: ServiceData[] = [
       { label: "Chimney Stack Repointed", category: "Repointing", bg: "from-slate-700 to-slate-900", image: "/chimney-repair.jpg" },
       { label: "Lead Flashing Renewed", category: "Lead Flashing", bg: "from-zinc-600 to-zinc-800", image: "/chimney-repair-1.jpg" },
       { label: "Chimney Pot Replaced", category: "Pot Work", bg: "from-stone-600 to-stone-800", image: "/chimney-repair-2.jpg" },
-      { label: "Flaunching Repaired", category: "Flaunching", bg: "from-slate-500 to-slate-700" },
-      { label: "Stack Removed at Roof Level", category: "Chimney Removal", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Step Flashing Detail", category: "Leadwork", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "How do I know if my chimney needs repair?", answer: "Warning signs include damp patches on the chimney breast indoors, crumbling or missing mortar, loose or leaning pots, visible cracking in the stack, or black staining around the breast." },
@@ -183,8 +174,6 @@ export const servicesData: ServiceData[] = [
       { label: "Ogee Style Gutter — Black", category: "Ogee Profile", bg: "from-zinc-600 to-zinc-800", image: "/gutter-install-1.jpg" },
       { label: "Fascia & Soffit Boards", category: "Fascia Work", bg: "from-stone-600 to-stone-800", image: "/gutter-install-2.jpeg" },
       { label: "Downpipe & Shoe Detail", category: "Downpipes", bg: "from-slate-500 to-slate-700", image: "/gutter-install-3.jpg" },
-      { label: "Corner & Stop-End Fitting", category: "Joinery", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Full Perimeter Completed", category: "Full System", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "What gutter styles and colours do you offer?", answer: "We install half-round, ogee, square-line, and deep-flow profiles. Standard colours are white, black, brown, and grey, with cast-iron effect available for period properties." },
@@ -216,8 +205,6 @@ export const servicesData: ServiceData[] = [
       { label: "Dropped Bracket Refixed", category: "Bracket Repair", bg: "from-zinc-600 to-zinc-800", image: "/gutter-repair-1.webp" },
       { label: "Cracked Section Replaced", category: "Section Swap", bg: "from-stone-600 to-stone-800", image: "/gutter-repair-2.jpeg" },
       { label: "Downpipe Reconnected", category: "Downpipe", bg: "from-slate-500 to-slate-700", image: "/gutter-repair-3.jpeg" },
-      { label: "Alignment Corrected", category: "Alignment", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Overflow Issue Resolved", category: "Flow Test", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "Can you repair any type of gutter?", answer: "Yes — we repair cast iron, uPVC, aluminium, and steel guttering of all profiles and ages." },
@@ -248,9 +235,6 @@ export const servicesData: ServiceData[] = [
       { label: "Full Gutter Run Cleared", category: "Debris Removal", bg: "from-slate-700 to-slate-900", image: "/gutter-clean.jpg" },
       { label: "Blocked Downpipe Cleared", category: "Downpipe", bg: "from-zinc-600 to-zinc-800", image: "/gutter-clean-1.webp" },
       { label: "Moss Build-Up Removed", category: "Moss Removal", bg: "from-stone-600 to-stone-800", image: "/gutter-clean-2.webp" },
-      { label: "Debris Bagged & Removed", category: "Clearance", bg: "from-slate-500 to-slate-700" },
-      { label: "Flow Test Completed", category: "Testing", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Joint Issue Spotted & Reported", category: "Condition Report", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "How often should gutters be cleaned?", answer: "At least once a year — ideally in autumn after the leaves have fallen. If you have overhanging trees, twice a year is recommended." },
@@ -282,8 +266,6 @@ export const servicesData: ServiceData[] = [
       { label: "Algae Treatment Applied", category: "Biocide", bg: "from-zinc-600 to-zinc-800", image: "/roo-cleaning-1.jpg" },
       { label: "Before & After Comparison", category: "Transformation", bg: "from-stone-600 to-stone-800", image: "/roof-cleaning-2.jpg" },
       { label: "Soft Washing in Progress", category: "Soft Wash", bg: "from-slate-500 to-slate-700", image: "/roof-cleaning-3.webp" },
-      { label: "Ridge Cleaned & Re-Pointed", category: "Ridge Work", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Treated Roof — 18 Months On", category: "Aftercare", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "Does roof cleaning damage the tiles?", answer: "Not when done correctly with soft washing. High-pressure jet washing can erode tile surfaces and strip away the weatherproofing layer — we never use high-pressure methods on roof tiles." },
@@ -314,9 +296,6 @@ export const servicesData: ServiceData[] = [
       { label: "Drone Survey in Progress", category: "Drone Survey", bg: "from-slate-700 to-slate-900", image: "/roof-inspection.jpg" },
       { label: "Loft Space Inspection", category: "Internal Check", bg: "from-zinc-600 to-zinc-800", image: "/roof-inspection-1.jpg" },
       { label: "Ridge & Valley Assessment", category: "External Check", bg: "from-stone-600 to-stone-800", image: "/roof-inspection-2.jpg" },
-      { label: "Written Report Extract", category: "Condition Report", bg: "from-slate-500 to-slate-700" },
-      { label: "Flashing Condition Check", category: "Detail Inspection", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Pre-Purchase Survey", category: "Buyer Survey", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "What does a roof survey involve?", answer: "A full visual inspection of the roof covering, ridge, valleys, chimney, flashings, guttering, and loft space. We use drone photography where safe and appropriate for inaccessible areas." },
@@ -348,8 +327,6 @@ export const servicesData: ServiceData[] = [
       { label: "Gable End Brickwork", category: "Gable Work", bg: "from-zinc-600 to-zinc-800", image: "/pointing-1.jpg" },
       { label: "Wall Repointing Completed", category: "Wall Pointing", bg: "from-stone-600 to-stone-800", image: "/pointing-2.webp" },
       { label: "Before & After Comparison", category: "Transformation", bg: "from-slate-500 to-slate-700", image: "/pointing-4.jpg" },
-      { label: "Brick Replacement", category: "Brickwork", bg: "from-neutral-700 to-neutral-900" },
-      { label: "Mortar Match Detail", category: "Colour Match", bg: "from-zinc-700 to-zinc-900" },
     ],
     faqs: [
       { question: "What is repointing and why does it matter?", answer: "Repointing replaces the deteriorated mortar between bricks. Without it, water penetrates the wall, causing internal damp, frost damage to the brickwork, and eventual structural weakening." },

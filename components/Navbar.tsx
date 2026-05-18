@@ -57,7 +57,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-36 h-14 rounded-xl overflow-hidden">
+            <div className="relative w-36 h-14 rounded-sm overflow-hidden">
               <Image src="/logo.png" alt="JL Roofing" fill className="object-contain bg-white" />
             </div>
           </Link>

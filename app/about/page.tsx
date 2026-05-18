@@ -114,7 +114,7 @@ export default function AboutPage() {
             />
             <div className="flex gap-4 flex-wrap pt-2">
               <Button size="lg" className="font-semibold" asChild>
-                <Link href="/contact">Get a Free Quote</Link>
+                <a href="https://wa.me/447486494947?text=I%20came%20from%20your%20google%20ads" target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
               </Button>
               <Button size="lg" variant="outline" className="font-semibold text-white border-white/30 hover:bg-white hover:text-secondary" asChild>
                 <a href="tel:+447486494947">

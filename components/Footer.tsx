@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-white">
+              <div className="relative w-36 h-16 rounded-sm overflow-hidden bg-white">
                 <Image src="/logo.png" alt="JL Roofing" fill className="object-contain p-1" />
               </div>
             </Link>

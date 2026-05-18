@@ -179,10 +179,10 @@ export default function ServicesPage() {
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-semibold group" asChild>
-                  <Link href="/contact">
+                  <a href="https://wa.me/447486494947?text=I%20came%20from%20your%20google%20ads" target="_blank" rel="noopener noreferrer">
                     Request a Quote
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button size="lg" variant="outline" className="font-semibold group border-slate-300" asChild>
                   <Link href={`/services/${service.slug}`}>

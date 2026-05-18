@@ -88,10 +88,10 @@ export default function LandingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button size="lg" className="h-12 px-8 font-semibold group" asChild>
-                <Link href="/contact">
+                <a href="https://wa.me/447486494947?text=I%20came%20from%20your%20google%20ads" target="_blank" rel="noopener noreferrer">
                   Get a Free Quote
                   <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </Button>
               <Button size="lg" variant="whatsapp" className="h-12 px-8 font-semibold" asChild>
                 <a href="https://wa.me/447486494947">
