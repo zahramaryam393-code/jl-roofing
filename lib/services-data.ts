@@ -12,6 +12,7 @@ export type GalleryItem = {
   label: string
   category: string
   bg: string
+  image?: string
 }
 
 export type ServiceData = {
@@ -21,6 +22,7 @@ export type ServiceData = {
   tagline: string
   description: string
   longDescription: string
+  heroImage: string
   features: string[]
   steps: ServiceStep[]
   galleryItems: GalleryItem[]
@@ -32,6 +34,7 @@ export const servicesData: ServiceData[] = [
     title: "Roof Installation",
     slug: "roof-installation",
     iconName: "Home",
+    heroImage: "/roof-install.jpg",
     tagline: "Built right from day one.",
     description: "Expert installation of new roofs using high-quality slate, tile, or modern materials. Built to last with long-term guarantees.",
     longDescription: "Whether you're replacing a failing roof or covering a new build, a quality installation makes the difference between a roof that lasts 50 years and one that causes problems within five. We use only premium materials, work to strict industry standards, and back every job with a written workmanship guarantee.",
@@ -44,8 +47,8 @@ export const servicesData: ServiceData[] = [
       { title: "Inspection & Sign-Off", description: "We carry out a full quality check, clear the site completely, and hand over your written guarantee on the day." },
     ],
     galleryItems: [
-      { label: "New Slate Roof Completed", category: "Installation", bg: "from-slate-700 to-slate-900" },
-      { label: "Ridge Tile Bedding & Pointing", category: "Ridge Work", bg: "from-zinc-600 to-zinc-800" },
+      { label: "New Slate Roof Completed", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
+      { label: "Ridge Tile Bedding & Pointing", category: "Ridge Work", bg: "from-zinc-600 to-zinc-800", image: "/roof-install-3.jpg" },
       { label: "Felt & Batten Layer", category: "Prep Work", bg: "from-stone-600 to-stone-800" },
       { label: "Hip Roof Completion", category: "Hip Roofing", bg: "from-slate-500 to-slate-700" },
       { label: "Lead Valley Detail", category: "Leadwork", bg: "from-neutral-700 to-neutral-900" },
@@ -64,6 +67,7 @@ export const servicesData: ServiceData[] = [
     title: "Roof Repair",
     slug: "roof-repair",
     iconName: "Hammer",
+    heroImage: "/roof-repair.jpg",
     tagline: "Fast, honest, and done properly.",
     description: "Fast and reliable repairs for leaks, storm damage, and wear-and-tear. We restore your roof's integrity quickly.",
     longDescription: "A roof leak rarely fixes itself. Left unattended, a small issue becomes damp walls, damaged ceilings, and rot in the timber structure. We locate the true source of the problem — which is often not where the water appears indoors — and fix it properly the first time.",
@@ -76,10 +80,10 @@ export const servicesData: ServiceData[] = [
       { title: "Final Check", description: "Every repair is inspected from both inside and outside before we leave, and we confirm the problem is fully resolved." },
     ],
     galleryItems: [
-      { label: "Tile Replacement Completed", category: "Tile Repair", bg: "from-slate-700 to-slate-900" },
-      { label: "Lead Flashings Renewed", category: "Leadwork", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Storm Damage Repaired", category: "Storm Repair", bg: "from-stone-600 to-stone-800" },
-      { label: "Ridge Tile Re-Bedded", category: "Ridge Repair", bg: "from-slate-500 to-slate-700" },
+      { label: "Tile Replacement Completed", category: "Tile Repair", bg: "from-slate-700 to-slate-900", image: "/roof-repair.jpg" },
+      { label: "Lead Flashings Renewed", category: "Leadwork", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair-2.jpg" },
+      { label: "Storm Damage Repaired", category: "Storm Repair", bg: "from-stone-600 to-stone-800", image: "/roof-repair-3.jpg" },
+      { label: "Ridge Tile Re-Bedded", category: "Ridge Repair", bg: "from-slate-500 to-slate-700", image: "/roof-repair-4.jpg" },
       { label: "Slipped Slate Fixed", category: "Slate Repair", bg: "from-neutral-700 to-neutral-900" },
       { label: "Leak Source Identified", category: "Investigation", bg: "from-zinc-700 to-zinc-900" },
     ],
@@ -96,6 +100,7 @@ export const servicesData: ServiceData[] = [
     title: "Flat Roofing",
     slug: "flat-roofing",
     iconName: "Droplets",
+    heroImage: "/flat-roof.jpg",
     tagline: "Modern systems built to outlast the alternatives.",
     description: "Modern flat roofing solutions including GRP Fibreglass and EPDM Rubber. Durable and maintenance-free.",
     longDescription: "Old felt flat roofs have a lifespan of around 10–15 years. Modern GRP fibreglass and EPDM rubber systems last 25 years or more with minimal maintenance, and come with long product warranties. We survey, specify, and install the right system for your property — from a small bay window to a full extension or garage roof.",
@@ -108,9 +113,9 @@ export const servicesData: ServiceData[] = [
       { title: "Testing & Sign-Off", description: "Drainage is flow-tested, the product warranty is registered in your name, and our workmanship guarantee is issued." },
     ],
     galleryItems: [
-      { label: "GRP Fibreglass Roof Installed", category: "GRP Fibreglass", bg: "from-slate-700 to-slate-900" },
-      { label: "EPDM Rubber Roof", category: "EPDM Rubber", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Extension Flat Roof", category: "Extensions", bg: "from-stone-600 to-stone-800" },
+      { label: "GRP Fibreglass Roof Installed", category: "GRP Fibreglass", bg: "from-slate-700 to-slate-900", image: "/flat-roof.jpg" },
+      { label: "EPDM Rubber Roof", category: "EPDM Rubber", bg: "from-zinc-600 to-zinc-800", image: "/flat-roof-2.jpeg" },
+      { label: "Extension Flat Roof", category: "Extensions", bg: "from-stone-600 to-stone-800", image: "/flat-roof-3.jpg" },
       { label: "Roof Terrace Completed", category: "Balcony", bg: "from-slate-500 to-slate-700" },
       { label: "Upstand & Edge Detail", category: "Detailing", bg: "from-neutral-700 to-neutral-900" },
       { label: "Before & After Conversion", category: "Transformation", bg: "from-zinc-700 to-zinc-900" },
@@ -128,6 +133,7 @@ export const servicesData: ServiceData[] = [
     title: "Chimney Repair",
     slug: "chimney-repair",
     iconName: "Star",
+    heroImage: "/chimney-repair.jpg",
     tagline: "Safeguard your stack before it costs you more.",
     description: "Professional chimney maintenance, repointing, and structural repairs to ensure safety and prevent water ingress.",
     longDescription: "Chimneys are one of the most exposed parts of any building. Subject to constant thermal movement, wind, and rainfall, the mortar, flashing, and pointing deteriorate over time. Left unaddressed, a failing chimney stack leads to internal damp, crumbling brickwork, and in serious cases, structural instability.",
@@ -140,9 +146,9 @@ export const servicesData: ServiceData[] = [
       { title: "Weatherproofing & Sign-Off", description: "All completed works are checked for water-tightness and structural integrity before we remove access equipment and sign off." },
     ],
     galleryItems: [
-      { label: "Chimney Stack Repointed", category: "Repointing", bg: "from-slate-700 to-slate-900" },
-      { label: "Lead Flashing Renewed", category: "Lead Flashing", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Chimney Pot Replaced", category: "Pot Work", bg: "from-stone-600 to-stone-800" },
+      { label: "Chimney Stack Repointed", category: "Repointing", bg: "from-slate-700 to-slate-900", image: "/chimney-repair.jpg" },
+      { label: "Lead Flashing Renewed", category: "Lead Flashing", bg: "from-zinc-600 to-zinc-800", image: "/chimney-repair-1.jpg" },
+      { label: "Chimney Pot Replaced", category: "Pot Work", bg: "from-stone-600 to-stone-800", image: "/chimney-repair-2.jpg" },
       { label: "Flaunching Repaired", category: "Flaunching", bg: "from-slate-500 to-slate-700" },
       { label: "Stack Removed at Roof Level", category: "Chimney Removal", bg: "from-neutral-700 to-neutral-900" },
       { label: "Step Flashing Detail", category: "Leadwork", bg: "from-zinc-700 to-zinc-900" },
@@ -160,6 +166,7 @@ export const servicesData: ServiceData[] = [
     title: "Gutter Installation",
     slug: "gutter-installation",
     iconName: "ShieldCheck",
+    heroImage: "/gutter-install.jpeg",
     tagline: "Protect your property from the ground up.",
     description: "Full replacement of old guttering with modern, maintenance-free uPVC systems in various styles and colours.",
     longDescription: "Gutters are your first line of defence against water damage to your walls, fascia, and foundations. Old cast iron or deteriorated uPVC guttering that fails to channel water away correctly causes damp, rot, and costly structural damage over time. We replace complete gutter systems in a single day with minimal disruption.",
@@ -172,10 +179,10 @@ export const servicesData: ServiceData[] = [
       { title: "Full Flow Test", description: "Water is run through the entire system to confirm clean flow, correct falls, watertight joints, and proper drainage to every outlet." },
     ],
     galleryItems: [
-      { label: "Half-Round uPVC Installed", category: "uPVC Gutters", bg: "from-slate-700 to-slate-900" },
-      { label: "Ogee Style Gutter — Black", category: "Ogee Profile", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Fascia & Soffit Boards", category: "Fascia Work", bg: "from-stone-600 to-stone-800" },
-      { label: "Downpipe & Shoe Detail", category: "Downpipes", bg: "from-slate-500 to-slate-700" },
+      { label: "Half-Round uPVC Installed", category: "uPVC Gutters", bg: "from-slate-700 to-slate-900", image: "/gutter-install.jpeg" },
+      { label: "Ogee Style Gutter — Black", category: "Ogee Profile", bg: "from-zinc-600 to-zinc-800", image: "/gutter-install-1.jpg" },
+      { label: "Fascia & Soffit Boards", category: "Fascia Work", bg: "from-stone-600 to-stone-800", image: "/gutter-install-2.jpeg" },
+      { label: "Downpipe & Shoe Detail", category: "Downpipes", bg: "from-slate-500 to-slate-700", image: "/gutter-install-3.jpg" },
       { label: "Corner & Stop-End Fitting", category: "Joinery", bg: "from-neutral-700 to-neutral-900" },
       { label: "Full Perimeter Completed", category: "Full System", bg: "from-zinc-700 to-zinc-900" },
     ],
@@ -192,6 +199,7 @@ export const servicesData: ServiceData[] = [
     title: "Gutter Repair",
     slug: "gutter-repair",
     iconName: "CheckCircle2",
+    heroImage: "/gutter-repair.jpg",
     tagline: "Stop the drip before it becomes a flood.",
     description: "Fixing leaks, sagging gutters, and broken brackets to ensure water is correctly diverted away from your property.",
     longDescription: "A leaking or overflowing gutter directs water straight down your external wall, saturating the brickwork and potentially causing internal damp. In many cases, targeted repairs to failing joints, brackets, and sections are all that's needed — avoiding the cost of a full replacement.",
@@ -204,10 +212,10 @@ export const servicesData: ServiceData[] = [
       { title: "Flow Test", description: "A final water test confirms the repair is fully effective before we leave." },
     ],
     galleryItems: [
-      { label: "Leaking Joint Resealed", category: "Joint Repair", bg: "from-slate-700 to-slate-900" },
-      { label: "Dropped Bracket Refixed", category: "Bracket Repair", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Cracked Section Replaced", category: "Section Swap", bg: "from-stone-600 to-stone-800" },
-      { label: "Downpipe Reconnected", category: "Downpipe", bg: "from-slate-500 to-slate-700" },
+      { label: "Leaking Joint Resealed", category: "Joint Repair", bg: "from-slate-700 to-slate-900", image: "/gutter-repair.jpg" },
+      { label: "Dropped Bracket Refixed", category: "Bracket Repair", bg: "from-zinc-600 to-zinc-800", image: "/gutter-repair-1.webp" },
+      { label: "Cracked Section Replaced", category: "Section Swap", bg: "from-stone-600 to-stone-800", image: "/gutter-repair-2.jpeg" },
+      { label: "Downpipe Reconnected", category: "Downpipe", bg: "from-slate-500 to-slate-700", image: "/gutter-repair-3.jpeg" },
       { label: "Alignment Corrected", category: "Alignment", bg: "from-neutral-700 to-neutral-900" },
       { label: "Overflow Issue Resolved", category: "Flow Test", bg: "from-zinc-700 to-zinc-900" },
     ],
@@ -224,6 +232,7 @@ export const servicesData: ServiceData[] = [
     title: "Gutter Cleaning",
     slug: "gutter-cleaning",
     iconName: "Droplets",
+    heroImage: "/gutter-clean.jpg",
     tagline: "Clear gutters. Dry walls. Peace of mind.",
     description: "Complete removal of debris, leaves, and moss to prevent blockages and potential water damage to your eaves.",
     longDescription: "Blocked gutters overflow, sending water cascading down your external walls and into the ground alongside your foundations. Over time this leads to damp walls, rotting fascia boards, and potentially serious structural moisture issues. A regular clean — at least once a year — costs very little compared to the remedial work a blockage can cause.",
@@ -236,9 +245,9 @@ export const servicesData: ServiceData[] = [
       { title: "Condition Report", description: "We flag any damage, failing joints, or structural issues spotted during the clean — with no pressure to book follow-up work." },
     ],
     galleryItems: [
-      { label: "Full Gutter Run Cleared", category: "Debris Removal", bg: "from-slate-700 to-slate-900" },
-      { label: "Blocked Downpipe Cleared", category: "Downpipe", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Moss Build-Up Removed", category: "Moss Removal", bg: "from-stone-600 to-stone-800" },
+      { label: "Full Gutter Run Cleared", category: "Debris Removal", bg: "from-slate-700 to-slate-900", image: "/gutter-clean.jpg" },
+      { label: "Blocked Downpipe Cleared", category: "Downpipe", bg: "from-zinc-600 to-zinc-800", image: "/gutter-clean-1.webp" },
+      { label: "Moss Build-Up Removed", category: "Moss Removal", bg: "from-stone-600 to-stone-800", image: "/gutter-clean-2.webp" },
       { label: "Debris Bagged & Removed", category: "Clearance", bg: "from-slate-500 to-slate-700" },
       { label: "Flow Test Completed", category: "Testing", bg: "from-neutral-700 to-neutral-900" },
       { label: "Joint Issue Spotted & Reported", category: "Condition Report", bg: "from-zinc-700 to-zinc-900" },
@@ -256,6 +265,7 @@ export const servicesData: ServiceData[] = [
     title: "Roof Cleaning",
     slug: "roof-cleaning",
     iconName: "ShieldCheck",
+    heroImage: "/roof-cleaning.webp",
     tagline: "Remove the damage before it removes your roof.",
     description: "Safe and effective removal of moss, algae, and dirt to improve your roof's appearance and lifespan.",
     longDescription: "Moss doesn't just look bad — it actively damages your roof. It holds moisture against the tile surface, accelerating frost damage and cracking, and its root system slowly forces tiles apart. Regular cleaning and biocide treatment removes the growth, kills the spores, and significantly extends your roof's serviceable life.",
@@ -268,10 +278,10 @@ export const servicesData: ServiceData[] = [
       { title: "Optional Sealing", description: "Where desired, a breathable roof sealant is applied to lock in tile colour, repel water, and extend the life of the roof covering." },
     ],
     galleryItems: [
-      { label: "Heavy Moss Cleared", category: "Moss Removal", bg: "from-slate-700 to-slate-900" },
-      { label: "Algae Treatment Applied", category: "Biocide", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Before & After Comparison", category: "Transformation", bg: "from-stone-600 to-stone-800" },
-      { label: "Soft Washing in Progress", category: "Soft Wash", bg: "from-slate-500 to-slate-700" },
+      { label: "Heavy Moss Cleared", category: "Moss Removal", bg: "from-slate-700 to-slate-900", image: "/roof-cleaning.webp" },
+      { label: "Algae Treatment Applied", category: "Biocide", bg: "from-zinc-600 to-zinc-800", image: "/roo-cleaning-1.jpg" },
+      { label: "Before & After Comparison", category: "Transformation", bg: "from-stone-600 to-stone-800", image: "/roof-cleaning-2.jpg" },
+      { label: "Soft Washing in Progress", category: "Soft Wash", bg: "from-slate-500 to-slate-700", image: "/roof-cleaning-3.webp" },
       { label: "Ridge Cleaned & Re-Pointed", category: "Ridge Work", bg: "from-neutral-700 to-neutral-900" },
       { label: "Treated Roof — 18 Months On", category: "Aftercare", bg: "from-zinc-700 to-zinc-900" },
     ],
@@ -288,6 +298,7 @@ export const servicesData: ServiceData[] = [
     title: "Roof Inspection",
     slug: "roof-inspection",
     iconName: "ShieldCheck",
+    heroImage: "/roof-inspection.jpg",
     tagline: "Know exactly what's up there.",
     description: "Comprehensive surveys to identify potential issues before they become expensive problems. Honest, professional advice.",
     longDescription: "Most homeowners don't look at their roof until there's a leak. By then, damage that could have been caught and fixed for a few hundred pounds has become a much larger job. A regular inspection — or a survey before purchasing a property — gives you a clear, honest picture of your roof's condition and what, if anything, needs attention.",
@@ -300,9 +311,9 @@ export const servicesData: ServiceData[] = [
       { title: "Walk-Through & Recommendations", description: "We go through our findings with you, answer your questions, and give honest advice on priority repairs or preventative measures." },
     ],
     galleryItems: [
-      { label: "Drone Survey in Progress", category: "Drone Survey", bg: "from-slate-700 to-slate-900" },
-      { label: "Loft Space Inspection", category: "Internal Check", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Ridge & Valley Assessment", category: "External Check", bg: "from-stone-600 to-stone-800" },
+      { label: "Drone Survey in Progress", category: "Drone Survey", bg: "from-slate-700 to-slate-900", image: "/roof-inspection.jpg" },
+      { label: "Loft Space Inspection", category: "Internal Check", bg: "from-zinc-600 to-zinc-800", image: "/roof-inspection-1.jpg" },
+      { label: "Ridge & Valley Assessment", category: "External Check", bg: "from-stone-600 to-stone-800", image: "/roof-inspection-2.jpg" },
       { label: "Written Report Extract", category: "Condition Report", bg: "from-slate-500 to-slate-700" },
       { label: "Flashing Condition Check", category: "Detail Inspection", bg: "from-neutral-700 to-neutral-900" },
       { label: "Pre-Purchase Survey", category: "Buyer Survey", bg: "from-zinc-700 to-zinc-900" },
@@ -320,6 +331,7 @@ export const servicesData: ServiceData[] = [
     title: "Pointing & Brickwork",
     slug: "pointing",
     iconName: "Hammer",
+    heroImage: "/pointing.jpeg",
     tagline: "Seal it in. Keep the weather out.",
     description: "Restoring the mortar between your bricks or tiles to prevent moisture penetration and structural issues.",
     longDescription: "Mortar has a finite lifespan. As it deteriorates, it opens gaps that allow water to penetrate the wall — leading to internal damp, frost damage to the brickwork, and over time, structural weakening. Repointing at the right time is a straightforward, cost-effective solution that protects your property for decades.",
@@ -332,10 +344,10 @@ export const servicesData: ServiceData[] = [
       { title: "Cleaning & Curing", description: "Excess mortar is cleaned from the brick faces and the new pointing is kept slightly damp during initial curing to prevent shrinkage cracking." },
     ],
     galleryItems: [
-      { label: "Ridge Tile Repointing", category: "Ridge Pointing", bg: "from-slate-700 to-slate-900" },
-      { label: "Gable End Brickwork", category: "Gable Work", bg: "from-zinc-600 to-zinc-800" },
-      { label: "Wall Repointing Completed", category: "Wall Pointing", bg: "from-stone-600 to-stone-800" },
-      { label: "Before & After Comparison", category: "Transformation", bg: "from-slate-500 to-slate-700" },
+      { label: "Ridge Tile Repointing", category: "Ridge Pointing", bg: "from-slate-700 to-slate-900", image: "/pointing.jpeg" },
+      { label: "Gable End Brickwork", category: "Gable Work", bg: "from-zinc-600 to-zinc-800", image: "/pointing-1.jpg" },
+      { label: "Wall Repointing Completed", category: "Wall Pointing", bg: "from-stone-600 to-stone-800", image: "/pointing-2.webp" },
+      { label: "Before & After Comparison", category: "Transformation", bg: "from-slate-500 to-slate-700", image: "/pointing-4.jpg" },
       { label: "Brick Replacement", category: "Brickwork", bg: "from-neutral-700 to-neutral-900" },
       { label: "Mortar Match Detail", category: "Colour Match", bg: "from-zinc-700 to-zinc-900" },
     ],

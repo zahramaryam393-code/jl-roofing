@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import { FaqAccordion } from "@/components/FaqAccordion"
 import {
@@ -11,6 +12,7 @@ const services = [
   {
     title: "Roof Installation",
     slug: "roof-installation",
+    image: "/roof-install.jpg",
     icon: <Home className="w-12 h-12" />,
     description: "Expert installation of new roofs using high-quality slate, tile, or modern materials. Built to last with long-term guarantees.",
     features: ["Slate Roofing", "Tiled Roofing", "Structural Work", "Felt & Batten"],
@@ -19,6 +21,7 @@ const services = [
   {
     title: "Roof Repair",
     slug: "roof-repair",
+    image: "/roof-repair.jpg",
     icon: <Hammer className="w-12 h-12" />,
     description: "Fast and reliable repairs for leaks, storm damage, and wear-and-tear. We restore your roof's integrity quickly.",
     features: ["Leak Detection", "Tile Replacement", "Storm Damage", "Leadwork"],
@@ -27,6 +30,7 @@ const services = [
   {
     title: "Flat Roofing",
     slug: "flat-roofing",
+    image: "/flat-roof.jpg",
     icon: <Droplets className="w-12 h-12" />,
     description: "Modern flat roofing solutions including GRP Fibreglass and EPDM Rubber. Durable and maintenance-free.",
     features: ["GRP Fibreglass", "EPDM Rubber", "Balcony Roofing", "Extension Roofs"],
@@ -35,6 +39,7 @@ const services = [
   {
     title: "Chimney Repair",
     slug: "chimney-repair",
+    image: "/chimney-repair.jpg",
     icon: <Star className="w-12 h-12" />,
     description: "Professional chimney maintenance, repointing, and structural repairs to ensure safety and prevent water ingress.",
     features: ["Repointing", "Lead Flashing", "Cowl Fitting", "Chimney Removal"],
@@ -43,6 +48,7 @@ const services = [
   {
     title: "Gutter Installation",
     slug: "gutter-installation",
+    image: "/gutter-install.jpeg",
     icon: <ShieldCheck className="w-12 h-12" />,
     description: "Full replacement of old guttering with modern, maintenance-free uPVC systems in various styles and colours.",
     features: ["uPVC Gutters", "Seamless Systems", "Bargeboards", "Downpipes"],
@@ -51,6 +57,7 @@ const services = [
   {
     title: "Gutter Repair",
     slug: "gutter-repair",
+    image: "/gutter-repair.jpg",
     icon: <CheckCircle2 className="w-12 h-12" />,
     description: "Fixing leaks, sagging gutters, and broken brackets to ensure water is correctly diverted away from your property.",
     features: ["Leak Sealing", "Bracket Fixes", "Alignment Adjustment", "Joint Replacement"],
@@ -59,6 +66,7 @@ const services = [
   {
     title: "Gutter Cleaning",
     slug: "gutter-cleaning",
+    image: "/gutter-clean.jpg",
     icon: <Droplets className="w-12 h-12" />,
     description: "Complete removal of debris, leaves, and moss to prevent blockages and potential water damage to your eaves.",
     features: ["Debris Removal", "Flow Testing", "Downpipe Clearing", "Minor Adjustments"],
@@ -67,6 +75,7 @@ const services = [
   {
     title: "Roof Cleaning",
     slug: "roof-cleaning",
+    image: "/roof-cleaning.webp",
     icon: <ShieldCheck className="w-12 h-12" />,
     description: "Safe and effective removal of moss, algae, and dirt to improve your roof's appearance and lifespan.",
     features: ["Moss Removal", "Algae Treatment", "Soft Washing", "Gutter Clearance"],
@@ -75,6 +84,7 @@ const services = [
   {
     title: "Roof Inspection",
     slug: "roof-inspection",
+    image: "/roof-inspection.jpg",
     icon: <ShieldCheck className="w-12 h-12" />,
     description: "Comprehensive surveys to identify potential issues before they become expensive problems. Honest, professional advice.",
     features: ["Drone Surveys", "Detailed Reports", "Pre-purchase Checks", "Insurance Quotes"],
@@ -83,6 +93,7 @@ const services = [
   {
     title: "Pointing & Brickwork",
     slug: "pointing",
+    image: "/pointing.jpeg",
     icon: <Hammer className="w-12 h-12" />,
     description: "Restoring the mortar between your bricks or tiles to prevent moisture penetration and structural issues.",
     features: ["Wall Repointing", "Ridge Tile Pointing", "Gable Repairs", "Brick Replacement"],
@@ -124,12 +135,12 @@ const steps = [
 ]
 
 const galleryItems = [
-  { label: "Slate Roof Installation", category: "Installation", bg: "from-slate-700 to-slate-900" },
-  { label: "Flat Roof Conversion", category: "Flat Roofing", bg: "from-zinc-600 to-zinc-800" },
-  { label: "Chimney Repointing", category: "Chimney Repair", bg: "from-stone-600 to-stone-800" },
-  { label: "uPVC Gutter Replacement", category: "Guttering", bg: "from-slate-500 to-slate-700" },
-  { label: "Storm Damage Repair", category: "Roof Repair", bg: "from-neutral-600 to-neutral-800" },
-  { label: "Moss Removal & Treatment", category: "Roof Cleaning", bg: "from-zinc-700 to-zinc-900" }
+  { label: "Roof Installation", category: "New Build", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
+  { label: "Roof Repair", category: "Repair", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair.jpg" },
+  { label: "Flat Roofing", category: "Flat Roof", bg: "from-stone-600 to-stone-800", image: "/flat-roof.jpg" },
+  { label: "Chimney Repair", category: "Chimney", bg: "from-slate-500 to-slate-700", image: "/chimney-repair.jpg" },
+  { label: "Gutter Installation", category: "Guttering", bg: "from-neutral-700 to-neutral-900", image: "/gutter-install.jpeg" },
+  { label: "Pointing & Brickwork", category: "Pointing", bg: "from-zinc-700 to-zinc-900", image: "/pointing.jpeg" },
 ]
 
 export default function ServicesPage() {
@@ -182,14 +193,9 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <div className={`relative aspect-video rounded-[3rem] bg-slate-100 overflow-hidden ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                {service.title.split(" ")[0] === "Roof" ? (
-                  <Home className="w-32 h-32 text-slate-400 opacity-50" />
-                ) : (
-                  <Hammer className="w-32 h-32 text-slate-400 opacity-50" />
-                )}
-              </div>
+            <div className={`relative aspect-video rounded-[3rem] overflow-hidden ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
+              <Image src={service.image} alt={service.title} fill className="object-cover" />
+              <div className="absolute inset-0 bg-primary/10" />
             </div>
           </div>
         </Section>
@@ -237,12 +243,15 @@ export default function ServicesPage() {
             {galleryItems.map((item, i) => (
               <div
                 key={i}
-                className={`relative group rounded-3xl overflow-hidden bg-gradient-to-br ${item.bg} aspect-[4/3] cursor-pointer`}
+                className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-[4/3] cursor-pointer`}
               >
-                {/* Placeholder content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
-                  <Camera className="w-16 h-16 text-white" />
-                </div>
+                {item.image ? (
+                  <Image src={item.image} alt={item.label} fill className="object-cover" />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
+                    <Camera className="w-16 h-16 text-white" />
+                  </div>
+                )}
 
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

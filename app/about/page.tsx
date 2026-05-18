@@ -1,6 +1,7 @@
+import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import {
-  ShieldCheck, Users, Award, Heart, CheckCircle2,
+  ShieldCheck, Users, Award, CheckCircle2,
   Star, Quote, Camera, HardHat, BadgeCheck, Hammer,
   Home, Droplets, ChevronRight, Phone
 } from "lucide-react"
@@ -56,18 +57,18 @@ const certifications = [
 ]
 
 const galleryItems = [
-  { label: "Natural Slate Roof — Newcastle", category: "Roof Installation", bg: "from-slate-700 to-slate-900" },
-  { label: "Clay Tile Replacement — Gateshead", category: "Roof Installation", bg: "from-zinc-600 to-zinc-800" },
-  { label: "Ridge Tile Repointing", category: "Pointing", bg: "from-stone-600 to-stone-800" },
-  { label: "GRP Fibreglass Flat Roof", category: "Flat Roofing", bg: "from-slate-500 to-slate-700" },
-  { label: "EPDM Extension Roof", category: "Flat Roofing", bg: "from-neutral-700 to-neutral-900" },
-  { label: "Storm Damage Repair", category: "Roof Repair", bg: "from-zinc-700 to-zinc-900" },
-  { label: "Chimney Stack Repointing", category: "Chimney Repair", bg: "from-slate-600 to-slate-800" },
-  { label: "Lead Flashing Renewal", category: "Leadwork", bg: "from-stone-700 to-stone-900" },
-  { label: "uPVC Gutter Replacement", category: "Guttering", bg: "from-zinc-500 to-zinc-700" },
-  { label: "Moss Removal & Treatment", category: "Roof Cleaning", bg: "from-neutral-600 to-neutral-800" },
-  { label: "Pre-Purchase Roof Survey", category: "Inspection", bg: "from-slate-700 to-slate-900" },
-  { label: "Full Pointing & Brickwork", category: "Brickwork", bg: "from-zinc-600 to-zinc-900" },
+  { label: "New Slate Roof", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
+  { label: "Roof Repair Completed", category: "Repair", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair.jpg" },
+  { label: "Flat Roof — GRP System", category: "Flat Roofing", bg: "from-stone-600 to-stone-800", image: "/flat-roof.jpg" },
+  { label: "Chimney Repointed", category: "Chimney", bg: "from-slate-500 to-slate-700", image: "/chimney-repair.jpg" },
+  { label: "Gutter System Installed", category: "Guttering", bg: "from-neutral-700 to-neutral-900", image: "/gutter-install.jpeg" },
+  { label: "Pointing Completed", category: "Pointing", bg: "from-zinc-700 to-zinc-900", image: "/pointing.jpeg" },
+  { label: "Roof Tiles Replaced", category: "Repair", bg: "from-slate-600 to-slate-800", image: "/roof-repair-2.jpg" },
+  { label: "Moss-Free Roof", category: "Cleaning", bg: "from-stone-700 to-stone-900", image: "/roof-cleaning.webp" },
+  { label: "Roof Inspection", category: "Inspection", bg: "from-zinc-500 to-zinc-700", image: "/roof-inspection.jpg" },
+  { label: "Gutter Repair", category: "Guttering", bg: "from-neutral-600 to-neutral-800", image: "/gutter-repair.jpg" },
+  { label: "Slate Installation", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install-3.jpg" },
+  { label: "Chimney Detail", category: "Chimney", bg: "from-zinc-600 to-zinc-900", image: "/chimney-repair-1.jpg" },
 ]
 
 const testimonials = [
@@ -175,8 +176,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-            <Heart className="w-32 h-32 text-slate-400 opacity-40" />
+          <div className="relative aspect-square rounded-[3rem] overflow-hidden">
+            <Image src="/roof-install.jpg" alt="JL Roofing team at work" fill className="object-cover" />
+            <div className="absolute inset-0 bg-primary/20" />
             <div className="absolute bottom-8 left-8 right-8 p-6 rounded-2xl bg-white/90 backdrop-blur-md shadow-xl border border-white space-y-1">
               <p className="font-semibold text-primary">500+ projects completed</p>
               <p className="text-sm font-bold text-slate-500">Across Newcastle, Gateshead, Sunderland, Durham & beyond</p>
@@ -313,11 +315,15 @@ export default function AboutPage() {
             {galleryItems.map((item, i) => (
               <div
                 key={i}
-                className={`relative group rounded-3xl overflow-hidden bg-gradient-to-br ${item.bg} aspect-[4/3] cursor-pointer`}
+                className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-[4/3] cursor-pointer`}
               >
-                <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                  <Camera className="w-16 h-16 text-white" />
-                </div>
+                {item.image ? (
+                  <Image src={item.image} alt={item.label} fill className="object-cover" />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                    <Camera className="w-16 h-16 text-white" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="inline-block px-3 py-1 rounded-full bg-accent text-white text-xs font-semibold uppercase tracking-wider mb-2">

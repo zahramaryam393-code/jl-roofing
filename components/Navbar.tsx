@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Phone, MessageCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -56,18 +57,8 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="p-2 rounded-xl bg-accent shadow-lg shadow-accent/20">
-              <div className="w-8 h-8 flex items-center justify-center font-black text-white text-xl italic tracking-tighter">
-                JL
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-black text-xl tracking-tighter leading-none text-white transition-colors">
-                ROOFING
-              </span>
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase opacity-60 text-white transition-colors">
-                & Property Maintenance
-              </span>
+            <div className="relative w-36 h-14 rounded-xl overflow-hidden">
+              <Image src="/logo.png" alt="JL Roofing" fill className="object-contain bg-white" />
             </div>
           </Link>
 

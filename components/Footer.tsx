@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, MapPin, Phone, MessageCircle, Share2, Globe } from "lucide-react"
 
 export function Footer() {
@@ -9,18 +10,8 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-white">
-                <div className="w-8 h-8 flex items-center justify-center font-black text-secondary text-xl italic tracking-tighter">
-                  JL
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-black text-xl tracking-tighter leading-none text-white">
-                  ROOFING
-                </span>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-white/70">
-                  & Property Maintenance
-                </span>
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-white">
+                <Image src="/logo.png" alt="JL Roofing" fill className="object-contain p-1" />
               </div>
             </Link>
             <p className="text-white/60 leading-relaxed max-w-xs font-medium">

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import {
   Hammer,
@@ -501,6 +502,7 @@ const serviceDetails: Record<string, ServiceDetail> = {
 
 const defaultService: ServiceDetail = {
   title: "Service Details",
+  icon: <HardHat className="w-16 h-16" />,
   description: "Expert roofing and property maintenance solutions for your home.",
   heroFeatures: {
     benefits: [
@@ -547,6 +549,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     <div className="pt-20">
       {/* Hero Section */}
       <Section variant="dark" className="bg-secondary relative py-24 overflow-hidden">
+        {serviceInfo?.heroImage && (
+          <>
+            <Image src={serviceInfo.heroImage} alt={service.title} fill className="object-cover object-center" priority />
+            <div className="absolute inset-0 bg-secondary/85" />
+          </>
+        )}
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl space-y-8">
              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
@@ -745,11 +753,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               {serviceInfo.galleryItems.map((item, i) => (
                 <div
                   key={i}
-                  className={`relative group rounded-3xl overflow-hidden bg-gradient-to-br ${item.bg} aspect-[4/3] cursor-pointer`}
+                  className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-[4/3] cursor-pointer`}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                    <Camera className="w-16 h-16 text-white" />
-                  </div>
+                  {item.image ? (
+                    <Image src={item.image} alt={item.label} fill className="object-cover" />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                      <Camera className="w-16 h-16 text-white" />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <span className="inline-block px-3 py-1 rounded-full bg-accent text-white text-xs font-semibold uppercase tracking-wider mb-2">

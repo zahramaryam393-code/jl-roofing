@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import {
   ShieldCheck,
   Clock,
@@ -53,10 +54,10 @@ const testimonials = [
 ]
 
 const galleryTeaser = [
-  { label: "Slate Roof Installation", category: "Roof Installation", bg: "from-slate-700 to-slate-900" },
-  { label: "GRP Flat Roof Conversion", category: "Flat Roofing", bg: "from-zinc-600 to-zinc-800" },
-  { label: "Chimney Repointing", category: "Chimney Repair", bg: "from-stone-600 to-stone-800" },
-  { label: "uPVC Gutter System", category: "Guttering", bg: "from-neutral-700 to-neutral-900" },
+  { label: "New Roof Completed", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
+  { label: "Flat Roof System", category: "Flat Roofing", bg: "from-zinc-600 to-zinc-800", image: "/flat-roof.jpg" },
+  { label: "Chimney Repointed", category: "Chimney", bg: "from-stone-600 to-stone-800", image: "/chimney-repair.jpg" },
+  { label: "Gutters Replaced", category: "Guttering", bg: "from-neutral-700 to-neutral-900", image: "/gutter-install.jpeg" },
 ]
 
 const areas = [
@@ -146,20 +147,20 @@ export default function LandingPage() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { icon: <Home className="w-8 h-8" />, title: "Roof Installation", slug: "roof-installation", desc: "High-quality slate and tile roof installations using the latest materials and techniques." },
-            { icon: <Hammer className="w-8 h-8" />, title: "Roof Repair", slug: "roof-repair", desc: "From slipped tiles to major leaks, we fix all roofing issues quickly and efficiently." },
-            { icon: <Droplets className="w-8 h-8" />, title: "Flat Roofing", slug: "flat-roofing", desc: "Durable GRP fibreglass and EPDM rubber roofing solutions for extensions and garages." },
-            { icon: <ShieldCheck className="w-8 h-8" />, title: "Gutter Installation", slug: "gutter-installation", desc: "Modern uPVC roofline replacements that are maintenance-free and look great." },
-            { icon: <Star className="w-8 h-8" />, title: "Chimney Repair", slug: "chimney-repair", desc: "Professional repointing, leadwork, and structural repairs for all types of chimneys." },
-            { icon: <CheckCircle2 className="w-8 h-8" />, title: "Roof Inspection", slug: "roof-inspection", desc: "Comprehensive surveys to identify potential issues before they become expensive problems." },
+            { icon: <Home className="w-8 h-8" />, title: "Roof Installation", slug: "roof-installation", image: "/roof-install.jpg", desc: "High-quality slate and tile roof installations using the latest materials and techniques." },
+            { icon: <Hammer className="w-8 h-8" />, title: "Roof Repair", slug: "roof-repair", image: "/roof-repair.jpg", desc: "From slipped tiles to major leaks, we fix all roofing issues quickly and efficiently." },
+            { icon: <Droplets className="w-8 h-8" />, title: "Flat Roofing", slug: "flat-roofing", image: "/flat-roof.jpg", desc: "Durable GRP fibreglass and EPDM rubber roofing solutions for extensions and garages." },
+            { icon: <ShieldCheck className="w-8 h-8" />, title: "Gutter Installation", slug: "gutter-installation", image: "/gutter-install.jpeg", desc: "Modern uPVC roofline replacements that are maintenance-free and look great." },
+            { icon: <Star className="w-8 h-8" />, title: "Chimney Repair", slug: "chimney-repair", image: "/chimney-repair.jpg", desc: "Professional repointing, leadwork, and structural repairs for all types of chimneys." },
+            { icon: <CheckCircle2 className="w-8 h-8" />, title: "Roof Inspection", slug: "roof-inspection", image: "/roof-inspection.jpg", desc: "Comprehensive surveys to identify potential issues before they become expensive problems." },
           ].map((service, i) => (
             <Link
               key={i}
               href={`/services/${service.slug}`}
               className="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="w-16 h-16 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
-                {service.icon}
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6">
+                <Image src={service.image} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <h3 className="text-xl font-semibold mb-4 tracking-tight group-hover:text-accent transition-colors">{service.title}</h3>
               <p className="text-slate-500 font-normal leading-relaxed mb-6">{service.desc}</p>
@@ -322,11 +323,15 @@ export default function LandingPage() {
               <Link
                 key={i}
                 href="/about#gallery"
-                className={`relative group rounded-3xl overflow-hidden bg-gradient-to-br ${item.bg} aspect-square`}
+                className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-square`}
               >
-                <div className="absolute inset-0 flex items-center justify-center opacity-15">
-                  <Camera className="w-12 h-12 text-white" />
-                </div>
+                {item.image ? (
+                  <Image src={item.image} alt={item.label} fill className="object-cover" />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center opacity-15">
+                    <Camera className="w-12 h-12 text-white" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="inline-block px-2 py-0.5 rounded-full bg-accent text-white text-[10px] font-semibold uppercase tracking-wider mb-1">
