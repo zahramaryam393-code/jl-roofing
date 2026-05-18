@@ -179,16 +179,16 @@ export default function ServicesPage() {
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="font-semibold group" asChild>
-                  <a href="https://api.whatsapp.com/send/?phone=447486494947&text=I+came+from+your+google+ads&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                  <a href="tel:+447486494947">
                     Request a Quote
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="font-semibold group border-slate-300" asChild>
-                  <Link href={`/services/${service.slug}`}>
+                  <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
                     Learn More
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -329,7 +329,7 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" variant="secondary" className="h-12 px-8 font-semibold" asChild>
-              <Link href="/contact">Free Inspection</Link>
+              <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">Free Inspection</a>
             </Button>
             <Button size="lg" variant="outline" className="h-12 px-8 font-semibold border-white text-white hover:bg-white hover:text-accent" asChild>
               <a href="tel:+447486494947">Call Us Now</a>

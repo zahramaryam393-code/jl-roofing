@@ -8,7 +8,7 @@ import type { Faq } from "@/lib/services-data"
 export const generalFaqs: Faq[] = [
   {
     question: "Do you offer free quotes?",
-    answer: "Yes — all quotes are completely free with no obligation. We visit your property, carry out a thorough assessment, and provide a clear, itemised written quote before any work begins."
+    answer: "Yes, all quotes are completely free with no obligation. We visit your property, carry out a thorough assessment, and provide a clear, itemised written quote before any work begins."
   },
   {
     question: "How long does a roof replacement take?",
@@ -28,7 +28,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     question: "Do I need planning permission for a new roof?",
-    answer: "In most cases, like-for-like roof replacements do not require planning permission in the UK. However, changes to the roof structure, materials, or height — or properties in conservation areas — may require approval. We can advise you on this during your survey."
+    answer: "In most cases, like-for-like roof replacements do not require planning permission in the UK. However, changes to the roof structure, materials, or height, or properties in conservation areas, may require approval. We can advise you on this during your survey."
   },
   {
     question: "Are you fully insured?",

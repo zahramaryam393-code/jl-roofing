@@ -2,8 +2,8 @@ import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import {
   ShieldCheck, Users, Award, CheckCircle2,
-  Star, Quote, Camera, BadgeCheck, Hammer,
-  Home, Droplets, ChevronRight, Phone
+  Star, Quote, Camera, BadgeCheck,
+  ChevronRight, Phone
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -20,9 +20,9 @@ const timeline = [
 const values = [
   { title: "Transparency", desc: "Clear, itemised quotes. No hidden costs, no surprise additions. The price we quote is the price you pay." },
   { title: "Reliability", desc: "We show up when we say we will and finish on schedule. Your time matters as much as your roof." },
-  { title: "Craftsmanship", desc: "The right materials, installed properly. We don't rush and we don't cut corners — ever." },
+  { title: "Craftsmanship", desc: "The right materials, installed properly. We don't rush and we don't cut corners, ever." },
   { title: "Honesty", desc: "If you don't need the work, we'll tell you. Our reputation is built on advice you can trust." },
-  { title: "Safety", desc: "CSCS certified workforce, full PPE, and proper safe access on every job — no exceptions." },
+  { title: "Safety", desc: "CSCS certified workforce, full PPE, and proper safe access on every job, no exceptions." },
   { title: "Aftercare", desc: "We don't disappear once the scaffold comes down. We're always on hand for questions and follow-ups." },
 ]
 
@@ -43,7 +43,7 @@ const team = [
     name: "Dan Clarke",
     role: "Flat Roofing Specialist",
     years: "8 years",
-    desc: "GRP fibreglass and EPDM certified. Dan handles all our extension, garage, and balcony roofing — every single sheet laid perfectly.",
+    desc: "GRP fibreglass and EPDM certified. Dan handles all our extension, garage, and balcony roofing, every single sheet laid perfectly.",
   },
 ]
 
@@ -59,7 +59,7 @@ const certifications = [
 const galleryItems = [
   { label: "New Slate Roof", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
   { label: "Roof Repair Completed", category: "Repair", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair.jpg" },
-  { label: "Flat Roof — GRP System", category: "Flat Roofing", bg: "from-stone-600 to-stone-800", image: "/flat-roof.jpg" },
+  { label: "Flat Roof, GRP System", category: "Flat Roofing", bg: "from-stone-600 to-stone-800", image: "/flat-roof.jpg" },
   { label: "Chimney Repointed", category: "Chimney", bg: "from-slate-500 to-slate-700", image: "/chimney-repair.jpg" },
   { label: "Gutter System Installed", category: "Guttering", bg: "from-neutral-700 to-neutral-900", image: "/gutter-install.jpeg" },
   { label: "Pointing Completed", category: "Pointing", bg: "from-zinc-700 to-zinc-900", image: "/pointing.jpeg" },
@@ -87,13 +87,13 @@ const testimonials = [
   {
     name: "Linda P.",
     location: "Gateshead",
-    review: "Got three quotes for my flat roof conversion. JL weren't the cheapest, but their honesty won me over — they told me I didn't need the most expensive option. Work was brilliant and the guarantee gives me peace of mind.",
+    review: "Got three quotes for my flat roof conversion. JL weren't the cheapest, but their honesty won me over, they told me I didn't need the most expensive option. Work was brilliant and the guarantee gives me peace of mind.",
     stars: 5,
   },
   {
     name: "David H.",
     location: "Sunderland",
-    review: "Gutters, fascias, and soffits all done in a single day. Spotless finish and they even cleaned the driveway before they left. Top-quality work at a fair price — already recommended them to my neighbours.",
+    review: "Gutters, fascias, and soffits all done in a single day. Spotless finish and they even cleaned the driveway before they left. Top-quality work at a fair price, already recommended them to my neighbours.",
     stars: 5,
   },
 ]
@@ -109,12 +109,12 @@ export default function AboutPage() {
               dark
               subtitle="Our Story"
               title="BUILT ON TRUST. PROVEN BY RESULTS."
-              description="JL Roofing & Property Maintenance has been protecting homes across the North East for over 15 years. We started small, grew slowly, and never compromised on the one thing that matters most — the quality of the work."
+              description="JL Roofing & Property Maintenance has been protecting homes across the North East for over 15 years. We started small, grew slowly, and never compromised on the one thing that matters most, the quality of the work."
               className="mb-0"
             />
             <div className="flex gap-4 flex-wrap pt-2">
               <Button size="lg" className="font-semibold" asChild>
-                <a href="https://api.whatsapp.com/send/?phone=447486494947&text=I+came+from+your+google+ads&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+                <a href="tel:+447486494947">Get a Free Quote</a>
               </Button>
               <Button size="lg" variant="outline" className="font-semibold text-white border-white/30 hover:bg-white hover:text-secondary" asChild>
                 <a href="tel:+447486494947">
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 Founded on the principle that good roofing work shouldn't be hard to find, JL Roofing began as a two-man operation in 2009. From day one, the rule was simple: every job is done as if it's your own home.
               </p>
               <p>
-                We've grown steadily since then — not through aggressive marketing, but through word of mouth and repeat customers. That's the kind of growth that tells you something real about the work.
+                We've grown steadily since then, not through aggressive marketing, but through word of mouth and repeat customers. That's the kind of growth that tells you something real about the work.
               </p>
               <p>
                 Today, our team of eight covers everything from a slipped slate on a semi-detached to a full roof installation on a period farmhouse. The materials may change. The standard doesn't.
@@ -245,7 +245,7 @@ export default function AboutPage() {
         <SectionHeader
           subtitle="The People"
           title="THE TEAM BEHIND THE WORK."
-          description="Every job is done by our own employed team — no subcontractors, no strangers on your roof."
+          description="Every job is done by our own employed team, no subcontractors, no strangers on your roof."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member, i) => (
@@ -270,7 +270,7 @@ export default function AboutPage() {
             <SectionHeader
               subtitle="Standards & Accreditation"
               title="CREDENTIALS YOU CAN VERIFY."
-              description="Our qualifications and insurance aren't just ticked boxes — they're the foundation of the trust our customers place in us."
+              description="Our qualifications and insurance aren't just ticked boxes, they're the foundation of the trust our customers place in us."
               className="mb-0"
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -306,7 +306,7 @@ export default function AboutPage() {
           <SectionHeader
             subtitle="Our Work"
             title="PROJECT GALLERY."
-            description="A selection of recently completed projects across the region — from single repairs to full roof transformations. Every job finished to the same high standard."
+            description="A selection of recently completed projects across the region, from single repairs to full roof transformations. Every job finished to the same high standard."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryItems.map((item, i) => (
@@ -333,13 +333,13 @@ export default function AboutPage() {
           </div>
           <div className="text-center pt-4 space-y-4">
             <p className="text-slate-500 font-semibold max-w-2xl mx-auto">
-              These are just a selection of our recent work. We handle projects of all sizes across the North East — from a slipped slate to a complete roof transformation.
+              These are just a selection of our recent work. We handle projects of all sizes across the North East, from a slipped slate to a complete roof transformation.
             </p>
             <Button size="lg" className="font-semibold group" asChild>
-              <Link href="/contact">
+              <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
                 Start Your Project
                 <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -390,10 +390,10 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="h-12 px-8 font-semibold" asChild>
-              <Link href="/services">View Our Services</Link>
+              <a href="tel:+447486494947">Call Us Direct</a>
             </Button>
             <Button size="lg" variant="outline" className="h-12 px-8 font-semibold border-white text-white hover:bg-white hover:text-accent" asChild>
-              <Link href="/contact">Contact Us</Link>
+              <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
             </Button>
           </div>
         </div>

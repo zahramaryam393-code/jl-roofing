@@ -26,7 +26,7 @@ import { FaqAccordion } from "@/components/FaqAccordion"
 
 const howItWorksSteps = [
   { icon: <Phone className="w-7 h-7" />, title: "Get In Touch", desc: "Call, WhatsApp, or fill out our contact form. We respond within a few hours." },
-  { icon: <ClipboardList className="w-7 h-7" />, title: "Free Survey", desc: "We visit your property for a thorough roof inspection — completely free." },
+  { icon: <ClipboardList className="w-7 h-7" />, title: "Free Survey", desc: "We visit your property for a thorough roof inspection, completely free." },
   { icon: <FileText className="w-7 h-7" />, title: "Clear Quote", desc: "You receive a detailed written quote with no hidden costs or jargon." },
   { icon: <HardHat className="w-7 h-7" />, title: "Work Begins", desc: "Our team arrives on time and works to the highest standard throughout." },
   { icon: <BadgeCheck className="w-7 h-7" />, title: "Guaranteed", desc: "We clean up fully and hand over your written workmanship guarantee." },
@@ -48,7 +48,7 @@ const testimonials = [
   {
     name: "David H.",
     location: "Sunderland",
-    review: "Gutters, fascias, and soffits all done in one day. Spotless finish — already recommended them to my neighbours.",
+    review: "Gutters, fascias, and soffits all done in one day. Spotless finish, already recommended them to my neighbours.",
     stars: 5,
   },
 ]
@@ -71,9 +71,8 @@ export default function LandingPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-secondary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-accent)_0%,_transparent_70%)] blur-3xl transform -translate-y-1/2 scale-150" />
-        </div>
+        <Image src="/roof-install.jpg" alt="JL Roofing, expert roof installation" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-secondary/80" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-white/80 uppercase tracking-widest">
@@ -84,11 +83,11 @@ export default function LandingPage() {
               Expert <span className="text-accent italic">Roofing</span> Solutions.
             </h1>
             <p className="text-sm md:text-base text-white/65 font-normal max-w-lg leading-relaxed">
-              From minor repairs to full roof replacements — quality craftsmanship that protects your home for decades, backed by a written guarantee.
+              From minor repairs to full roof replacements, quality craftsmanship that protects your home for decades, backed by a written guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button size="lg" className="h-12 px-8 font-semibold group" asChild>
-                <a href="https://api.whatsapp.com/send/?phone=447486494947&text=I+came+from+your+google+ads&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                <a href="tel:+447486494947">
                   Get a Free Quote
                   <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -147,16 +146,18 @@ export default function LandingPage() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { icon: <Home className="w-8 h-8" />, title: "Roof Installation", slug: "roof-installation", image: "/roof-install.jpg", desc: "High-quality slate and tile roof installations using the latest materials and techniques." },
-            { icon: <Hammer className="w-8 h-8" />, title: "Roof Repair", slug: "roof-repair", image: "/roof-repair.jpg", desc: "From slipped tiles to major leaks, we fix all roofing issues quickly and efficiently." },
-            { icon: <Droplets className="w-8 h-8" />, title: "Flat Roofing", slug: "flat-roofing", image: "/flat-roof.jpg", desc: "Durable GRP fibreglass and EPDM rubber roofing solutions for extensions and garages." },
-            { icon: <ShieldCheck className="w-8 h-8" />, title: "Gutter Installation", slug: "gutter-installation", image: "/gutter-install.jpeg", desc: "Modern uPVC roofline replacements that are maintenance-free and look great." },
-            { icon: <Star className="w-8 h-8" />, title: "Chimney Repair", slug: "chimney-repair", image: "/chimney-repair.jpg", desc: "Professional repointing, leadwork, and structural repairs for all types of chimneys." },
-            { icon: <CheckCircle2 className="w-8 h-8" />, title: "Roof Inspection", slug: "roof-inspection", image: "/roof-inspection.jpg", desc: "Comprehensive surveys to identify potential issues before they become expensive problems." },
+            { icon: <Home className="w-8 h-8" />, title: "Roof Installation", image: "/roof-install.jpg", desc: "High-quality slate and tile roof installations using the latest materials and techniques." },
+            { icon: <Hammer className="w-8 h-8" />, title: "Roof Repair", image: "/roof-repair.jpg", desc: "From slipped tiles to major leaks, we fix all roofing issues quickly and efficiently." },
+            { icon: <Droplets className="w-8 h-8" />, title: "Flat Roofing", image: "/flat-roof.jpg", desc: "Durable GRP fibreglass and EPDM rubber roofing solutions for extensions and garages." },
+            { icon: <ShieldCheck className="w-8 h-8" />, title: "Gutter Installation", image: "/gutter-install.jpeg", desc: "Modern uPVC roofline replacements that are maintenance-free and look great." },
+            { icon: <Star className="w-8 h-8" />, title: "Chimney Repair", image: "/chimney-repair.jpg", desc: "Professional repointing, leadwork, and structural repairs for all types of chimneys." },
+            { icon: <CheckCircle2 className="w-8 h-8" />, title: "Roof Inspection", image: "/roof-inspection.jpg", desc: "Comprehensive surveys to identify potential issues before they become expensive problems." },
           ].map((service, i) => (
-            <Link
+            <a
               key={i}
-              href={`/services/${service.slug}`}
+              href="https://wa.me/447486494947"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
               <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6">
@@ -168,7 +169,7 @@ export default function LandingPage() {
                 Learn More
                 <ChevronRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
-            </Link>
+            </a>
           ))}
         </div>
         <div className="text-center mt-10">
@@ -244,7 +245,7 @@ export default function LandingPage() {
               {[
                 { title: "Honest Inspections", desc: "We never recommend work that isn't necessary. You get an honest appraisal every time, with no pressure." },
                 { title: "Expert Craftsmanship", desc: "All our roofers are highly trained and follow strict quality standards. Your roof is treated as if it were our own." },
-                { title: "No Hidden Costs", desc: "The price we quote is the price you pay. No surprises or hidden extras — ever." },
+                { title: "No Hidden Costs", desc: "The price we quote is the price you pay. No surprises or hidden extras, ever." },
                 { title: "Fully Insured & Guaranteed", desc: "£5 million public liability insurance and written workmanship guarantees of up to 10 years on every job." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-5 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-accent/20 transition-colors">
@@ -383,7 +384,7 @@ export default function LandingPage() {
             centered
             subtitle="Coverage"
             title="AREAS WE COVER."
-            description="We serve homeowners and businesses across the North East. If you're not listed, give us a call — we likely cover your area."
+            description="We serve homeowners and businesses across the North East. If you're not listed, give us a call, we likely cover your area."
           />
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
             {areas.map((area, i) => (
@@ -410,10 +411,10 @@ export default function LandingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="h-12 px-8 font-semibold group" asChild>
-              <Link href="/contact">
+              <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
                 Get Started Now
                 <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
             </Button>
             <Button size="lg" variant="outline" className="h-12 px-8 font-semibold border-white text-white hover:bg-white hover:text-accent" asChild>
               <a href="tel:+447486494947">

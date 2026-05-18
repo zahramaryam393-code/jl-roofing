@@ -122,9 +122,11 @@ export default function ContactPage() {
                 />
               </div>
 
-              <Button size="lg" className="w-full h-12 font-semibold group">
-                Send Message
-                <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <Button size="lg" className="w-full h-12 font-semibold group" asChild>
+                <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
+                  Send via WhatsApp
+                  <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </a>
               </Button>
             </form>
           </div>

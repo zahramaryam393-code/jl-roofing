@@ -33,7 +33,7 @@ export function FloatingContact() {
 
   return (
     <>
-      {/* Desktop: floating WhatsApp button — bottom right */}
+      {/* Desktop: floating WhatsApp button, bottom right */}
       <a
         href={WA_URL}
         target="_blank"
@@ -45,7 +45,7 @@ export function FloatingContact() {
         <span className="text-sm font-semibold leading-none">WhatsApp Us</span>
       </a>
 
-      {/* Mobile: sticky bottom bar — Call + WhatsApp */}
+      {/* Mobile: sticky bottom bar, Call + WhatsApp */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-white/10 shadow-2xl">
         <a
           href={PHONE_URL}
