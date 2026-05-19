@@ -76,6 +76,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold text-white/40">
           <p suppressHydrationWarning>© {new Date().getFullYear()} JL Roofing & Property Maintenance. All Rights Reserved.</p>
+          <p>Developed by <a href="https://coltivor.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Coltivor</a></p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

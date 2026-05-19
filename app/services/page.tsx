@@ -112,7 +112,7 @@ const steps = [
     number: "02",
     icon: <ClipboardList className="w-7 h-7" />,
     title: "Free Survey",
-    description: "One of our qualified roofers visits your property for a thorough inspection — including the loft space where needed."
+    description: "One of our qualified roofers visits your property for a thorough inspection, including the loft space where needed."
   },
   {
     number: "03",
@@ -207,7 +207,7 @@ export default function ServicesPage() {
           dark
           subtitle="Our Process"
           title="HOW IT WORKS."
-          description="From your first call to the final guarantee — here's exactly what to expect when you work with us."
+          description="From your first call to the final guarantee, here's exactly what to expect when you work with us."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mt-4">
           {steps.map((step, i) => (
@@ -237,7 +237,7 @@ export default function ServicesPage() {
           <SectionHeader
             subtitle="Our Work"
             title="RECENT PROJECTS."
-            description="A snapshot of the jobs we're proud of — from full roof replacements to precision repairs across the region."
+            description="A snapshot of the jobs we're proud of, from full roof replacements to precision repairs across the region."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryItems.map((item, i) => (
@@ -284,7 +284,7 @@ export default function ServicesPage() {
             <SectionHeader
               subtitle="Common Questions"
               title="FREQUENTLY ASKED."
-              description="Everything you need to know before hiring a roofer. Can't find your answer? Give us a call — we're always happy to help."
+              description="Everything you need to know before hiring a roofer. Can't find your answer? Give us a call, we're always happy to help."
               className="mb-0"
             />
             <div className="space-y-4 pt-4">
