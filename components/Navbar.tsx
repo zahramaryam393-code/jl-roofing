@@ -1,5 +1,4 @@
 "use client"
-
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -8,8 +7,10 @@ import { Menu, X, ChevronDown, Phone, MessageCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-const navItems = [
+const allNavItems = [
   { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
   {
     name: "Services",
     href: "/services",
@@ -26,14 +27,15 @@ const navItems = [
       { name: "Pointing & Brickwork", href: "/services/pointing" },
     ],
   },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
 ]
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [scrolled, setScrolled] = React.useState(false)
   const pathname = usePathname()
+
+  const isServicesPath = pathname?.startsWith("/services")
+  const navItems = isServicesPath ? [allNavItems[3]] : allNavItems
 
   React.useEffect(() => {
     const handleScroll = () => {

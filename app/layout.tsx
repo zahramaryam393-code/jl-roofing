@@ -3,7 +3,6 @@ import { Inter, Barlow_Semi_Condensed } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { Navbar } from "@/components/Navbar"
-import { Footer } from "@/components/Footer"
 import { FloatingContact } from "@/components/FloatingContact"
 
 const inter = Inter({
@@ -27,9 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${barlow.variable} h-full`}>
       <body
@@ -67,7 +64,6 @@ export default function RootLayout({
 
         <Navbar />
         <main className="flex-grow">{children}</main>
-        <Footer />
         <FloatingContact />
       </body>
     </html>

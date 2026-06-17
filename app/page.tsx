@@ -425,6 +425,128 @@ export default function LandingPage() {
           </div>
         </div>
       </Section>
+
+      {/* Footer */}
+      <footer className="bg-secondary text-white">
+        <div className="container mx-auto px-4 md:px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            {/* Brand */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white font-bold italic text-sm">
+                  JL
+                </div>
+                <span className="font-bold text-lg tracking-tight">JL Roofing</span>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed font-medium">
+                Expert roofing solutions across the North East. Fully insured, guaranteed work you can trust.
+              </p>
+              <div className="flex gap-3 pt-2">
+                {/* FIX 1: Restored missing <a opening tag */}
+                <a
+                  href="https://wa.me/447486494947"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-600 hover:bg-green-500 text-white text-sm font-semibold transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp
+                </a>
+                {/* FIX 2: Restored missing <a opening tag */}
+                <a
+                  href="tel:+447486494947"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call Us
+                </a>
+              </div>
+            </div>
+
+            {/* Services */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white uppercase tracking-widest text-xs">Services</h4>
+              <ul className="space-y-2.5">
+                {[
+                  "Roof Installation",
+                  "Roof Repair",
+                  "Flat Roofing",
+                  "Gutter Installation",
+                  "Chimney Repair",
+                  "Roof Inspection",
+                ].map((s) => (
+                  <li key={s}>
+                    {/* FIX 3: Restored missing <a opening tag */}
+                    <a
+                      href="https://wa.me/447486494947"
+                      className="text-white/60 hover:text-accent text-sm font-medium transition-colors flex items-center gap-1.5"
+                    >
+                      <ChevronRight className="w-3 h-3" />
+                      {s}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Areas */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white uppercase tracking-widest text-xs">Areas Covered</h4>
+              <ul className="space-y-2.5">
+                {["Newcastle", "Gateshead", "Sunderland", "Durham", "Whitley Bay", "North Shields"].map((area) => (
+                  <li key={area} className="flex items-center gap-1.5 text-white/60 text-sm font-medium">
+                    <MapPin className="w-3 h-3 text-accent" />
+                    {area}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="space-y-4">
+              <h4 className="font-bold text-white uppercase tracking-widest text-xs">Contact</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Phone className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-white/40 text-xs uppercase tracking-wider mb-0.5">Phone</p>
+                    <a href="tel:+447486494947" className="text-white/80 hover:text-accent text-sm font-semibold transition-colors">
+                      +44 7486 494947
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MessageCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-white/40 text-xs uppercase tracking-wider mb-0.5">WhatsApp</p>
+                    <a href="https://wa.me/447486494947" className="text-white/80 hover:text-accent text-sm font-semibold transition-colors">
+                      Message Us Directly
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-white/40 text-xs uppercase tracking-wider mb-0.5">Location</p>
+                    <p className="text-white/80 text-sm font-semibold">North East, England</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/40 text-sm font-medium">
+              {/* FIX 4: Escaped & as &amp; */}
+              &copy; {new Date().getFullYear()} JL Roofing &amp; Property Maintenance. All rights reserved.
+            </p>
+            <div className="flex items-center gap-2 text-white/40 text-sm font-medium">
+              <ShieldCheck className="w-4 h-4 text-accent" />
+              Fully Insured &middot; 10-Year Guarantee &middot; Free Quotes
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }
