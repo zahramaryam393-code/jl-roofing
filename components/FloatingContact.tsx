@@ -24,9 +24,11 @@ function PhoneIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 export function FloatingContact() {
   const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
     setMounted(true)
   }, [])
+
   if (!mounted) return null
 
   return (
@@ -77,7 +79,7 @@ export function FloatingContact() {
       `}</style>
 
       {/* Desktop WhatsApp */}
-      <a
+      
         href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
@@ -85,7 +87,6 @@ export function FloatingContact() {
         className="fc-bob hidden md:flex fixed bottom-6 right-6 z-50 items-center"
       >
         <span className="relative flex items-center">
-          {/* Pulsing rings */}
           <span
             className="fc-ring absolute inset-0 rounded-full bg-[#25D366]"
             style={{ animation: "fc-ring 2s ease-out infinite" }}
@@ -94,7 +95,6 @@ export function FloatingContact() {
             className="fc-ring absolute inset-0 rounded-full bg-[#25D366]"
             style={{ animation: "fc-ring 2s ease-out infinite 1s" }}
           />
-
           <span className="fc-glow fc-shimmer relative flex items-center gap-3 px-6 py-4 rounded-full bg-[#25D366] text-white font-semibold overflow-hidden transition-transform duration-300 hover:scale-110">
             <span className="fc-wiggle flex">
               <WhatsAppIcon />
