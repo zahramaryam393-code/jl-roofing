@@ -22,6 +22,18 @@ function PhoneIcon({ className = "w-5 h-5" }: { className?: string }) {
   )
 }
 
+// Star positions: [top, left, animDelay, size]
+const STAR_POSITIONS = [
+  { style: { top: "-14px", left: "50%", transform: "translateX(-50%)" }, delay: "0s",    size: 7  },
+  { style: { top: "4px",   right: "-14px" },                              delay: "0.5s",  size: 5  },
+  { style: { bottom: "4px", right: "-12px" },                             delay: "1.0s",  size: 8  },
+  { style: { bottom: "-14px", left: "50%", transform: "translateX(-50%)" }, delay: "1.5s", size: 6 },
+  { style: { bottom: "4px",  left: "-12px" },                             delay: "2.0s",  size: 5  },
+  { style: { top: "4px",    left: "-14px" },                              delay: "2.5s",  size: 7  },
+  { style: { top: "50%",    right: "-16px", transform: "translateY(-50%)" }, delay: "0.75s", size: 4 },
+  { style: { top: "50%",    left: "-16px",  transform: "translateY(-50%)" }, delay: "1.75s", size: 4 },
+]
+
 export function FloatingContact() {
   const [mounted, setMounted] = useState(false)
 
@@ -35,12 +47,12 @@ export function FloatingContact() {
     <>
       <style>{`
         @keyframes fc-ring {
-          0% { transform: scale(1); opacity: 0.7; }
-          100% { transform: scale(2.4); opacity: 0; }
+          0% { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(2.8); opacity: 0; }
         }
         @keyframes fc-bob {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-6px); }
+          50% { transform: translateY(-7px); }
         }
         @keyframes fc-wiggle {
           0%, 88%, 100% { transform: rotate(0deg); }
@@ -55,56 +67,108 @@ export function FloatingContact() {
           100% { transform: translateX(220%) skewX(-20deg); }
         }
         @keyframes fc-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(37,211,102,0.6), 0 0 40px rgba(37,211,102,0.3); }
-          50% { box-shadow: 0 0 35px rgba(37,211,102,0.9), 0 0 70px rgba(37,211,102,0.5); }
+          0%, 100% {
+            box-shadow:
+              0 0 18px 4px rgba(37,211,102,0.7),
+              0 0 40px 10px rgba(37,211,102,0.4),
+              0 0 70px 20px rgba(37,211,102,0.15);
+          }
+          50% {
+            box-shadow:
+              0 0 30px 8px rgba(37,211,102,0.95),
+              0 0 60px 18px rgba(37,211,102,0.6),
+              0 0 100px 30px rgba(37,211,102,0.25);
+          }
         }
-        .fc-bob { animation: fc-bob 2.8s ease-in-out infinite; }
+        @keyframes fc-star {
+          0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+          30%       { opacity: 1; }
+          50%       { transform: scale(1) rotate(72deg); opacity: 1; }
+          80%       { transform: scale(0.5) rotate(120deg); opacity: 0.4; }
+        }
+        .fc-bob    { animation: fc-bob 2.8s ease-in-out infinite; }
         .fc-wiggle { animation: fc-wiggle 4s ease-in-out infinite; transform-origin: center; }
-        .fc-glow { animation: fc-glow 2.2s ease-in-out infinite; }
+        .fc-glow   { animation: fc-glow 2.2s ease-in-out infinite; }
         .fc-shimmer::after {
           content: "";
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 50%;
-          height: 100%;
+          top: 0; left: 0;
+          width: 50%; height: 100%;
           background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
           animation: fc-shimmer 3s ease-in-out infinite;
         }
+        .fc-star {
+          position: absolute;
+          pointer-events: none;
+          animation: fc-star 2.5s ease-in-out infinite;
+        }
+        .fc-star::before,
+        .fc-star::after {
+          content: "";
+          position: absolute;
+          background: #fff;
+          border-radius: 1px;
+        }
+        .fc-star::before {
+          width: 100%; height: 2px;
+          top: 50%; left: 0;
+          transform: translateY(-50%);
+        }
+        .fc-star::after {
+          width: 2px; height: 100%;
+          left: 50%; top: 0;
+          transform: translateX(-50%);
+        }
         @media (prefers-reduced-motion: reduce) {
-          .fc-bob, .fc-wiggle, .fc-glow { animation: none !important; }
+          .fc-bob, .fc-wiggle, .fc-glow, .fc-star { animation: none !important; }
           .fc-shimmer::after { animation: none; }
           .fc-ring { display: none; }
         }
       `}</style>
 
-      {/* Desktop WhatsApp */}
+      {/* Floating WhatsApp button — visible on ALL screen sizes, bottom-right */}
       <a
         href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fc-bob hidden md:flex fixed bottom-6 right-6 z-50 items-center"
+        className="fc-bob fixed bottom-20 right-5 md:bottom-8 md:right-8 z-50 flex"
       >
-        <span className="relative flex items-center">
+        <span className="relative flex items-center justify-center">
+          {/* Pulsing rings */}
           <span
             className="fc-ring absolute inset-0 rounded-full bg-[#25D366]"
-            style={{ animation: "fc-ring 2s ease-out infinite" }}
+            style={{ animation: "fc-ring 2.2s ease-out infinite" }}
           />
           <span
             className="fc-ring absolute inset-0 rounded-full bg-[#25D366]"
-            style={{ animation: "fc-ring 2s ease-out infinite 1s" }}
+            style={{ animation: "fc-ring 2.2s ease-out infinite 1.1s" }}
           />
-          <span className="fc-glow fc-shimmer relative flex items-center gap-3 px-6 py-4 rounded-full bg-[#25D366] text-white font-semibold overflow-hidden transition-transform duration-300 hover:scale-110">
+
+          {/* Star sparkles */}
+          {STAR_POSITIONS.map((star, i) => (
+            <span
+              key={i}
+              className="fc-star"
+              style={{
+                ...star.style,
+                width: `${star.size}px`,
+                height: `${star.size}px`,
+                animationDelay: star.delay,
+              }}
+            />
+          ))}
+
+          {/* Main circle button */}
+          <span className="fc-glow fc-shimmer relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#25D366] text-white overflow-hidden transition-transform duration-300 hover:scale-110">
             <span className="fc-wiggle flex">
-              <WhatsAppIcon />
+              <WhatsAppIcon className="w-9 h-9 md:w-11 md:h-11" />
             </span>
-            <span className="relative whitespace-nowrap">WhatsApp Us</span>
           </span>
         </span>
       </a>
 
-      {/* Mobile Bar */}
+      {/* Mobile bottom bar — phone + WhatsApp */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex shadow-[0_-5px_25px_rgba(0,0,0,0.35)]">
         <a
           href={PHONE_URL}
