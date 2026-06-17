@@ -77,7 +77,7 @@ export function FloatingContact() {
       `}</style>
 
       {/* Desktop WhatsApp */}
-      
+      <a
         href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
