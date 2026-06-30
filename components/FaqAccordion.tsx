@@ -41,17 +41,26 @@ export const generalFaqs: Faq[] = [
 ]
 
 export function FaqAccordion({ faqs = generalFaqs }: { faqs?: Faq[] }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndices, setOpenIndices] = useState<Set<number>>(new Set(faqs.map((_, i) => i)))
+
+  const toggle = (i: number) => {
+    setOpenIndices((prev) => {
+      const next = new Set(prev)
+      if (next.has(i)) next.delete(i)
+      else next.add(i)
+      return next
+    })
+  }
 
   return (
     <div className="divide-y divide-slate-200">
       {faqs.map((faq, i) => {
-        const isOpen = openIndex === i
+        const isOpen = openIndices.has(i)
         return (
           <div key={i}>
             <button
               className="w-full flex items-center justify-between gap-4 py-6 text-left group"
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+              onClick={() => toggle(i)}
               aria-expanded={isOpen}
             >
               <span className="text-base font-semibold text-primary group-hover:text-accent transition-colors">
