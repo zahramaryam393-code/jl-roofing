@@ -25,7 +25,7 @@ function PhoneIcon({ className = "w-5 h-5" }: { className?: string }) {
 // Star positions: [top, left, animDelay, size]
 const STAR_POSITIONS = [
   { style: { top: "-14px", left: "50%", transform: "translateX(-50%)" }, delay: "0s",    size: 7  },
-  { style: { top: "4px",   right: "-14px" },                              delay: "0.5s",  size: 5  },
+  { style: { top: "5px",   right: "-14px" },                              delay: "0.5s",  size: 5  },
   { style: { bottom: "3px", right: "-12px" },                             delay: "1.0s",  size: 8  },
   { style: { bottom: "-14px", left: "50%", transform: "translateX(-50%)" }, delay: "1.5s", size: 6 },
   { style: { bottom: "4px",  left: "-12px" },                             delay: "2.0s",  size: 5  },
