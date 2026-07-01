@@ -1,6 +1,6 @@
 import { Section, SectionHeader } from "@/components/Section"
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, ShieldCheck, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Phone, Mail, MapPin, Clock, MessageCircle, ShieldCheck, ChevronRight } from "lucide-react"
+import { ContactForm } from "@/components/ContactForm"
 
 export default function ContactPage() {
   return (
@@ -72,65 +72,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="p-8 md:p-12 rounded-[3rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50">
-              <h3 className="text-2xl font-bold mb-8 tracking-tight">Send a Message</h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Full Name</label>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Phone Number</label>
-                    <input
-                      type="tel"
-                      placeholder="07486 494947"
-                      className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Email Address</label>
-                  <input
-                    type="email"
-                    placeholder="john@example.com"
-                    className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">How can we help?</label>
-                  <select className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all appearance-none">
-                    <option>General Enquiry</option>
-                    <option>Roof Repair Quote</option>
-                    <option>New Roof Quote</option>
-                    <option>Guttering / Fascias</option>
-                    <option>Emergency Repair</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Your Message</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Please describe your requirements..."
-                    className="w-full p-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all resize-none"
-                  />
-                </div>
-
-                <Button size="lg" className="w-full h-12 font-semibold group" asChild>
-                  <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
-                    Send via WhatsApp
-                    <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </a>
-                </Button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </Section>
       </div>
