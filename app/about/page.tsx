@@ -39,7 +39,7 @@ const team = [
   {
     name: "Joe Linden",
     role: "Founder & Lead Roofer",
-    years: "15+ years",
+    years: "25+ years",
     desc: "Started JL Roofing after a decade working for others and knowing there was a better way. Specialises in slate, heritage materials, and structural repairs.",
   },
   {
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 dark
                 subtitle="Our Story"
                 title="BUILT ON TRUST. PROVEN BY RESULTS."
-                description="JL Roofing & Property Maintenance has been protecting homes across the North East for over 15 years. We started small, grew slowly, and never compromised on the one thing that matters most, the quality of the work."
+                description="JL Roofing & Property Maintenance has been protecting homes across the North East for over 25 years. We started small, grew slowly, and never compromised on the one thing that matters most, the quality of the work."
                 className="mb-0"
               />
               <div className="flex gap-4 flex-wrap pt-2">
@@ -137,7 +137,7 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-3 gap-6 lg:text-right">
               {[
-                { num: "15+", label: "Years in Business" },
+                { num: "25+", label: "Years in Business" },
                 { num: "500+", label: "Happy Customers" },
                 { num: "10yr", label: "Workmanship Guarantee" },
               ].map((stat, i) => (
@@ -198,7 +198,7 @@ export default function AboutPage() {
           <SectionHeader
             centered
             subtitle="Our Journey"
-            title="15 YEARS IN THE MAKING."
+            title="25 YEARS IN THE MAKING."
             description="From a single van to a full team, here's how JL Roofing grew into one of the North East's most trusted roofing companies."
           />
           <div className="relative">

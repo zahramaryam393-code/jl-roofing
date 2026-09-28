@@ -101,7 +101,7 @@ export default function LandingPage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-white/10">
               {[
-                { num: "15+", label: "Years Experience" },
+                { num: "25+", label: "Years Experience" },
                 { num: "500+", label: "Happy Customers" },
                 { num: "100%", label: "Satisfaction Rate" },
                 { num: "24/7", label: "Emergency Repairs" },
