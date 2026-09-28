@@ -100,7 +100,7 @@ export function ContactForm() {
           />
         </div>
 
-        <Button size="lg" variant="whatsapp" className="w-full h-12 font-semibold" type="submit">
+        <Button size="lg" variant="whatsapp" className="w-full h-11 font-semibold" type="submit">
           Send via WhatsApp
           <Send className="ml-2 w-5 h-5" />
         </Button>
