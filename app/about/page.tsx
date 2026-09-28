@@ -500,6 +500,9 @@ export default function AboutPage() {
               <ShieldCheck className="w-4 h-4 text-accent" />
               Fully Insured &middot; 10-Year Guarantee &middot; Free Quotes
             </div>
+            <Link href="/privacy" className="text-white/40 hover:text-white text-sm font-medium transition-colors">
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </footer>
