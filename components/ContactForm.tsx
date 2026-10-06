@@ -36,12 +36,32 @@ export function ContactForm() {
       return
     }
 
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    if (!accessKey) {
+      setStatus("error")
+      return
+    }
+
+    // Honeypot: bots tick this; pretend success without sending.
+    if (botcheck) {
+      setStatus("success")
+      return
+    }
+
     setStatus("sending")
     try {
-      const res = await fetch("/api/contact", {
+      // Web3Forms free plan only accepts browser requests; the destination email is set by the access key.
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, message, botcheck }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New enquiry from ${name.trim()} - JL Roofing website`,
+          from_name: "JL Roofing Website",
+          name: name.trim(),
+          phone: `+44${phone}`,
+          message: message.trim(),
+        }),
       })
       const data = await res.json().catch(() => null)
       setStatus(res.ok && data?.success ? "success" : "error")
