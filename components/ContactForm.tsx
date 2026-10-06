@@ -1,107 +1,159 @@
 "use client"
 
 import { useState } from "react"
-import { Send } from "lucide-react"
+import { CheckCircle2, MessageCircle, Phone, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const whatsappPhone = "447486494947"
+const callHref = "tel:+447486494947"
+const whatsappHref = "https://wa.me/447486494947"
+
+const inputClass =
+  "w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
+
+type Status = "idle" | "sending" | "success" | "error"
 
 export function ContactForm() {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
-  const [email, setEmail] = useState("")
-  const [service, setService] = useState("General Enquiry")
   const [message, setMessage] = useState("")
+  const [botcheck, setBotcheck] = useState("")
+  const [status, setStatus] = useState<Status>("idle")
+  const [phoneError, setPhoneError] = useState("")
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  // The +44 prefix is fixed; users type only the national number (leading 0 optional).
+  const handlePhoneChange = (value: string) => {
+    let digits = value.replace(/\D/g, "")
+    if (digits.startsWith("0")) digits = digits.slice(1)
+    setPhone(digits.slice(0, 10))
+    setPhoneError("")
+  }
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const whatsappText = [
-      `Hi JL Roofing,`,`My name is ${name}.`,`Phone: ${phone}.`,`Email: ${email}.`,
-      `Service: ${service}.`,`Message: ${message || "No additional information provided."}`,
-    ].join(" ")
+    if (!/^[1-9]\d{9}$/.test(phone)) {
+      setPhoneError("Enter a valid UK number, e.g. 7486 494947")
+      return
+    }
 
-    const encodedText = encodeURIComponent(whatsappText)
-    const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedText}`
+    setStatus("sending")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message, botcheck }),
+      })
+      const data = await res.json().catch(() => null)
+      setStatus(res.ok && data?.success ? "success" : "error")
+    } catch {
+      setStatus("error")
+    }
+  }
 
-    window.location.href = whatsappUrl
+  if (status === "success") {
+    return (
+      <div className="p-8 md:p-12 rounded-[3rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 text-center" role="status">
+        <CheckCircle2 className="w-16 h-16 text-whatsapp mx-auto mb-6" />
+        <h3 className="text-2xl font-bold mb-3 tracking-tight">Thank you, {name.split(" ")[0]}!</h3>
+        <p className="text-slate-500 font-medium mb-8">
+          We&apos;ve received your enquiry and will get back to you within a few hours. For anything urgent, call or message us now.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="h-12 px-8 font-semibold" asChild>
+            <a href={callHref}>
+              <Phone className="mr-2 w-5 h-5" />
+              Call Us
+            </a>
+          </Button>
+          <Button size="lg" variant="whatsapp" className="h-12 px-8 font-semibold" asChild>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="mr-2 w-5 h-5" />
+              WhatsApp Us
+            </a>
+          </Button>
+        </div>
+      </div>
+    )
   }
 
   return (
     <div className="p-8 md:p-12 rounded-[3rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50">
       <h3 className="text-2xl font-bold mb-8 tracking-tight">Send a Message</h3>
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Full Name</label>
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="John Doe"
-              required
-              className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              value={phone}
-              onChange={(event) => setPhone(event.target.value)}
-              placeholder="07486 494947"
-              required
-              className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
-            />
-          </div>
-        </div>
-
         <div className="space-y-2">
-          <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Email Address</label>
+          <label htmlFor="cf-name" className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Full Name</label>
           <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="john@example.com"
+            id="cf-name"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="John Doe"
+            maxLength={100}
             required
-            className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all"
+            className={inputClass}
           />
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">How can we help?</label>
-          <select
-            name="service"
-            value={service}
-            onChange={(event) => setService(event.target.value)}
-            required
-            className="w-full h-14 px-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all appearance-none"
-          >
-            <option>General Enquiry</option>
-            <option>Roof Repair Quote</option>
-            <option>New Roof Quote</option>
-            <option>Guttering / Fascias</option>
-            <option>Emergency Repair</option>
-          </select>
+          <label htmlFor="cf-phone" className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Phone Number</label>
+          <div className="flex">
+            <span className="inline-flex items-center h-14 px-5 rounded-l-2xl bg-slate-100 border border-r-0 border-slate-100 font-semibold text-slate-500 select-none">
+              🇬🇧 +44
+            </span>
+            <input
+              id="cf-phone"
+              type="tel"
+              name="phone"
+              inputMode="numeric"
+              autoComplete="tel-national"
+              value={phone}
+              onChange={(event) => handlePhoneChange(event.target.value)}
+              placeholder="7486494947"
+              required
+              aria-invalid={!!phoneError}
+              aria-describedby={phoneError ? "cf-phone-error" : undefined}
+              className={`${inputClass} rounded-l-none`}
+            />
+          </div>
+          {phoneError && <p id="cf-phone-error" className="text-sm font-semibold text-red-600 ml-1">{phoneError}</p>}
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Your Message</label>
+          <label htmlFor="cf-message" className="text-sm font-semibold uppercase tracking-wide text-slate-400 ml-1">Description</label>
           <textarea
+            id="cf-message"
             name="message"
             rows={4}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             placeholder="Please describe your requirements..."
+            maxLength={3000}
+            required
             className="w-full p-6 rounded-2xl bg-slate-50 border border-slate-100 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold transition-all resize-none"
           />
         </div>
 
-        <Button size="lg" variant="whatsapp" className="w-full h-11 font-semibold" type="submit">
-          Send via WhatsApp
+        {/* Honeypot, hidden from people */}
+        <input
+          type="checkbox"
+          name="botcheck"
+          checked={!!botcheck}
+          onChange={(event) => setBotcheck(event.target.checked ? "1" : "")}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+        />
+
+        {status === "error" && (
+          <p className="text-sm font-semibold text-red-600" role="alert">
+            Sorry, something went wrong sending your enquiry. Please try again, or call or WhatsApp us on 07486 494947.
+          </p>
+        )}
+
+        <Button size="lg" className="w-full h-11 font-semibold" type="submit" disabled={status === "sending"}>
+          {status === "sending" ? "Sending..." : "Send Enquiry"}
           <Send className="ml-2 w-5 h-5" />
         </Button>
       </form>

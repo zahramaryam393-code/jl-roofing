@@ -26,7 +26,7 @@ const sections = [
   {
     title: "How Our Contact Form Works",
     body: [
-      "Our contact form does not store your details on our website. When you press \"Send via WhatsApp\", your enquiry is passed to WhatsApp, where you can review the message before sending it to us. Once sent, your message is handled by WhatsApp in line with WhatsApp's own privacy policy.",
+      "Our contact form does not store your details on our website. When you press \"Send Enquiry\", your name, phone number and message are sent by email to us through Web3Forms, a form-handling service, in line with Web3Forms' own privacy policy. If you contact us by WhatsApp instead, your message is handled by WhatsApp in line with WhatsApp's own privacy policy.",
     ],
   },
   {
