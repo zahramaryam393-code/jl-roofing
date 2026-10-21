@@ -13,6 +13,7 @@ export type GalleryItem = {
   category: string
   bg: string
   image?: string
+  video?: string
 }
 
 export type ServiceData = {
@@ -34,7 +35,7 @@ export const servicesData: ServiceData[] = [
     title: "Roof Installation",
     slug: "roof-installation",
     iconName: "Home",
-    heroImage: "/roof-install.jpg",
+    heroImage: "/001.jpg",
     tagline: "Built right from day one.",
     description: "Expert installation of new roofs using high-quality slate, tile, or modern materials. Built to last with long-term guarantees.",
     longDescription: "Whether you're replacing a failing roof or covering a new build, a quality installation makes the difference between a roof that lasts 50 years and one that causes problems within five. We use only premium materials, work to strict industry standards, and back every job with a written workmanship guarantee.",
@@ -49,6 +50,19 @@ export const servicesData: ServiceData[] = [
     galleryItems: [
       { label: "New Slate Roof Completed", category: "Installation", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
       { label: "Ridge Tile Bedding & Pointing", category: "Ridge Work", bg: "from-zinc-600 to-zinc-800", image: "/roof-install-3.jpg" },
+      { label: "Old Roof Stripped to Rafters", category: "Strip-Off", bg: "from-stone-600 to-stone-800", image: "/011.jpg" },
+      { label: "Breathable Membrane & New Battens", category: "Membrane", bg: "from-slate-600 to-slate-800", image: "/012.jpg" },
+      { label: "BBA-Approved Underlay Battened Out", category: "Battening", bg: "from-zinc-700 to-zinc-900", image: "/014.jpg" },
+      { label: "Hip Roof Felted & Battened", category: "Battening", bg: "from-neutral-600 to-neutral-800", image: "/010.jpg" },
+      { label: "Multi-Pitch Re-Roof Battened", category: "Battening", bg: "from-stone-700 to-stone-900", image: "/009.jpg" },
+      { label: "New Slates Going On", category: "Slating", bg: "from-slate-700 to-slate-900", image: "/001.jpg" },
+      { label: "Plain Clay Tiles Being Laid", category: "Tiling", bg: "from-zinc-600 to-zinc-800", image: "/015.jpg" },
+      { label: "Hip Roof Completed", category: "Completed", bg: "from-stone-600 to-stone-800", image: "/005.jpg" },
+      { label: "Interlocking Tiles Completed", category: "Completed", bg: "from-slate-500 to-slate-700", image: "/006.jpg" },
+      { label: "Dry Hip & Ridge Finish", category: "Ridge & Hip", bg: "from-neutral-700 to-neutral-900", image: "/007.jpg" },
+      { label: "Finished Slate Roof Walkthrough", category: "Video", bg: "from-slate-700 to-slate-900", video: "/roof-video-1.mp4" },
+      { label: "Completed Tiled Roof Walkthrough", category: "Video", bg: "from-zinc-600 to-zinc-800", video: "/roof-video-2.mp4" },
+      { label: "Plain Tile Re-Roof Walkthrough", category: "Video", bg: "from-stone-600 to-stone-800", video: "/roof-video-3.mp4" },
     ],
     faqs: [
       { question: "How long does a full roof installation take?", answer: "Most standard residential roofs take 2–5 days depending on size and complexity. We'll give you an accurate timeframe in your quote." },
@@ -80,6 +94,10 @@ export const servicesData: ServiceData[] = [
       { label: "Lead Flashings Renewed", category: "Leadwork", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair-2.jpg" },
       { label: "Storm Damage Repaired", category: "Storm Repair", bg: "from-stone-600 to-stone-800", image: "/roof-repair-3.jpg" },
       { label: "Ridge Tile Re-Bedded", category: "Ridge Repair", bg: "from-slate-500 to-slate-700", image: "/roof-repair-4.jpg" },
+      { label: "Damaged Section Stripped & Re-Felted", category: "Section Repair", bg: "from-slate-700 to-slate-900", image: "/002.jpg" },
+      { label: "Section Re-Tiled & Tied In", category: "Section Repair", bg: "from-zinc-600 to-zinc-800", image: "/004.jpg" },
+      { label: "Re-Tiling in Progress", category: "Tile Repair", bg: "from-stone-600 to-stone-800", image: "/013.jpg" },
+      { label: "Dry Ridge & Hip System Fitted", category: "Ridge Repair", bg: "from-slate-500 to-slate-700", image: "/008.jpg" },
     ],
     faqs: [
       { question: "How quickly can you respond to a roof leak?", answer: "For serious leaks we aim to attend the same day or within 24 hours. For non-urgent repairs, we're usually with you within 2–3 working days." },
@@ -143,6 +161,7 @@ export const servicesData: ServiceData[] = [
       { label: "Chimney Stack Repointed", category: "Repointing", bg: "from-slate-700 to-slate-900", image: "/chimney-repair.jpg" },
       { label: "Lead Flashing Renewed", category: "Lead Flashing", bg: "from-zinc-600 to-zinc-800", image: "/chimney-repair-1.jpg" },
       { label: "Chimney Pot Replaced", category: "Pot Work", bg: "from-stone-600 to-stone-800", image: "/chimney-repair-2.jpg" },
+      { label: "New Flashing at Chimney Stack", category: "Lead Flashing", bg: "from-slate-500 to-slate-700", image: "/003.jpg" },
     ],
     faqs: [
       { question: "How do I know if my chimney needs repair?", answer: "Warning signs include damp patches on the chimney breast indoors, crumbling or missing mortar, loose or leaning pots, visible cracking in the stack, or black staining around the breast." },

@@ -12,7 +12,7 @@ const services = [
   {
     title: "Roof Installation",
     slug: "roof-installation",
-    image: "/roof-install.jpg",
+    image: "/001.jpg",
     icon: <Home className="w-12 h-12" />,
     description: "Expert installation of new roofs using high-quality slate, tile, or modern materials. Built to last with long-term guarantees.",
     features: ["Slate Roofing", "Tiled Roofing", "Structural Work", "Felt & Batten"],
@@ -135,7 +135,7 @@ const steps = [
 ]
 
 const galleryItems = [
-  { label: "Roof Installation", category: "New Build", bg: "from-slate-700 to-slate-900", image: "/roof-install.jpg" },
+  { label: "Roof Installation", category: "New Build", bg: "from-slate-700 to-slate-900", image: "/005.jpg" },
   { label: "Roof Repair", category: "Repair", bg: "from-zinc-600 to-zinc-800", image: "/roof-repair.jpg" },
   { label: "Flat Roofing", category: "Flat Roof", bg: "from-stone-600 to-stone-800", image: "/flat-roof.jpg" },
   { label: "Chimney Repair", category: "Chimney", bg: "from-slate-500 to-slate-700", image: "/chimney-repair.jpg" },

@@ -701,9 +701,20 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               {serviceInfo.galleryItems.map((item, i) => (
                 <div
                   key={i}
-                  className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-[4/3] cursor-pointer`}
+                  className={`relative group rounded-3xl overflow-hidden ${item.image || item.video ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-[4/3] cursor-pointer`}
                 >
-                  {item.image ? (
+                  {item.video ? (
+                    <video
+                      src={item.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={item.label}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : item.image ? (
                     <Image src={item.image} alt={item.label} fill className="object-cover" />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center opacity-10">
