@@ -174,6 +174,9 @@ export const servicesData: ServiceData[] = [
       { label: "Ogee Style Gutter, Black", category: "Ogee Profile", bg: "from-zinc-600 to-zinc-800", image: "/gutter-install-1.jpg" },
       { label: "Fascia & Soffit Boards", category: "Fascia Work", bg: "from-stone-600 to-stone-800", image: "/gutter-install-2.jpeg" },
       { label: "Downpipe & Shoe Detail", category: "Downpipes", bg: "from-slate-500 to-slate-700", image: "/gutter-install-3.jpg" },
+      { label: "Gutter Replacement in Progress", category: "Replacement", bg: "from-zinc-700 to-zinc-900", image: "/gutter-install-4.jpeg" },
+      { label: "Roofline & Gutter Upgrade", category: "Roofline", bg: "from-stone-700 to-stone-900", image: "/gutter-install-5.jpeg" },
+      { label: "New Gutter & Downpipe Fitted", category: "uPVC Gutters", bg: "from-neutral-700 to-neutral-900", image: "/gutter-install-6.jpeg" },
     ],
     faqs: [
       { question: "What gutter styles and colours do you offer?", answer: "We install half-round, ogee, square-line, and deep-flow profiles. Standard colours are white, black, brown, and grey, with cast-iron effect available for period properties." },
@@ -205,6 +208,8 @@ export const servicesData: ServiceData[] = [
       { label: "Dropped Bracket Refixed", category: "Bracket Repair", bg: "from-zinc-600 to-zinc-800", image: "/gutter-repair-1.webp" },
       { label: "Cracked Section Replaced", category: "Section Swap", bg: "from-stone-600 to-stone-800", image: "/gutter-repair-2.jpeg" },
       { label: "Downpipe Reconnected", category: "Downpipe", bg: "from-slate-500 to-slate-700", image: "/gutter-repair-3.jpeg" },
+      { label: "Gutter Repair Underway", category: "On Site", bg: "from-zinc-700 to-zinc-900", image: "/gutter-repair-4.jpeg" },
+      { label: "Gutter & Downpipe Repaired", category: "Downpipe", bg: "from-stone-700 to-stone-900", image: "/gutter-repair-5.jpeg" },
     ],
     faqs: [
       { question: "Can you repair any type of gutter?", answer: "Yes, we repair cast iron, uPVC, aluminium, and steel guttering of all profiles and ages." },
@@ -235,6 +240,7 @@ export const servicesData: ServiceData[] = [
       { label: "Full Gutter Run Cleared", category: "Debris Removal", bg: "from-slate-700 to-slate-900", image: "/gutter-clean.jpg" },
       { label: "Blocked Downpipe Cleared", category: "Downpipe", bg: "from-zinc-600 to-zinc-800", image: "/gutter-clean-1.webp" },
       { label: "Moss Build-Up Removed", category: "Moss Removal", bg: "from-stone-600 to-stone-800", image: "/gutter-clean-2.webp" },
+      { label: "Gutters & Roofline Left Clean", category: "Finished Job", bg: "from-slate-500 to-slate-700", image: "/gutter-clean-3.jpeg" },
     ],
     faqs: [
       { question: "How often should gutters be cleaned?", answer: "At least once a year, ideally in autumn after the leaves have fallen. If you have overhanging trees, twice a year is recommended." },
