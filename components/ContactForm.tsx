@@ -96,7 +96,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="p-8 md:p-12 rounded-[3rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/50 text-center" role="status">
-        <CheckCircle2 className="w-16 h-16 text-whatsapp mx-auto mb-6" />
+        <CheckCircle2 className="w-16 h-16 text-whatsapp mx-auto mb-5" />
         <h3 className="text-2xl font-bold mb-3 tracking-tight">Thank you, {name.split(" ")[0]}!</h3>
         <p className="text-slate-500 font-medium mb-8">
           We&apos;ve received your enquiry and will get back to you within a few hours. For anything urgent, call or message us now.
