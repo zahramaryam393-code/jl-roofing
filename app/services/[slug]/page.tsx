@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import {
   ShieldCheck,
@@ -513,7 +512,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <Section variant="dark" className="bg-secondary relative py-24 overflow-hidden">
         {serviceInfo?.heroImage && (
           <>
-            <Image src={serviceInfo.heroImage} alt={service.title} fill className="object-cover object-center" priority />
+            <img src={serviceInfo.heroImage} alt={service.title} className="absolute inset-0 w-full h-full object-cover object-center" fetchPriority="high" />
             <div className="absolute inset-0 bg-secondary/85" />
           </>
         )}
@@ -715,7 +714,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : item.image ? (
-                    <Image src={item.image} alt={item.label} fill className="object-cover" />
+                    <img src={item.image} alt={item.label} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center opacity-10">
                       <Camera className="w-12 h-12 text-white" />

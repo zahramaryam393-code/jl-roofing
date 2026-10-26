@@ -1,7 +1,6 @@
 "use client"
 import * as React from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Phone, MessageCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -59,7 +58,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-36 h-14 rounded-sm overflow-hidden">
-              <Image src="/logo.png" alt="JL Roofing" fill className="object-contain bg-white" />
+              <img src="/logo.png" alt="JL Roofing" className="absolute inset-0 w-full h-full object-contain bg-white" />
             </div>
           </Link>
 

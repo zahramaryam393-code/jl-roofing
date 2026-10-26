@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Section, SectionHeader } from "@/components/Section"
 import { FaqAccordion } from "@/components/FaqAccordion"
 import {
@@ -194,7 +193,7 @@ export default function ServicesPage() {
             </div>
 
             <div className={`relative aspect-video rounded-[3rem] overflow-hidden ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
-              <Image src={service.image} alt={service.title} fill className="object-cover" />
+              <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-primary/10" />
             </div>
           </div>
@@ -246,7 +245,7 @@ export default function ServicesPage() {
                 className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-[4/3] cursor-pointer`}
               >
                 {item.image ? (
-                  <Image src={item.image} alt={item.label} fill className="object-cover" />
+                  <img src={item.image} alt={item.label} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                 ) : (
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
                     <Camera className="w-16 h-16 text-white" />

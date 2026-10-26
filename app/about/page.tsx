@@ -1,4 +1,3 @@
-import Image from "next/image"
 import {
   ShieldCheck,
   Users,
@@ -187,7 +186,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative aspect-square rounded-[3rem] overflow-hidden">
-              <Image src="/roof-install.jpg" alt="JL Roofing team at work" fill className="object-cover" />
+              <img src="/roof-install.jpg" alt="JL Roofing team at work" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-primary/10" />
             </div>
           </div>
@@ -305,7 +304,7 @@ export default function AboutPage() {
                 className={`relative group rounded-2xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-square`}
               >
                 {item.image ? (
-                  <Image src={item.image} alt={item.label} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={item.image} alt={item.label} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center opacity-20">
                     <Camera className="w-10 h-10 text-white" />

@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import {
   ShieldCheck,
   Clock,
@@ -71,7 +70,7 @@ export default function LandingPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-secondary">
-        <Image src="/roof-install.jpg" alt="JL Roofing, expert roof installation" fill className="object-cover object-center" priority />
+        <img src="/roof-install.jpg" alt="JL Roofing, expert roof installation" className="absolute inset-0 w-full h-full object-cover object-center" fetchPriority="high" />
         <div className="absolute inset-0 bg-secondary/80" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl space-y-8">
@@ -161,7 +160,7 @@ export default function LandingPage() {
               className="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
               <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6">
-                <Image src={service.image} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
               <h3 className="text-xl font-semibold mb-4 tracking-tight group-hover:text-accent transition-colors">{service.title}</h3>
               <p className="text-slate-500 font-normal leading-relaxed mb-6">{service.desc}</p>
@@ -215,7 +214,7 @@ export default function LandingPage() {
       <Section className="bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-square rounded-[3rem] overflow-hidden">
-            <Image src="/roof-install.jpg" alt="JL Roofing team at work" fill className="object-cover" />
+            <img src="/roof-install.jpg" alt="JL Roofing team at work" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-primary/20" />
             <div className="absolute bottom-8 left-8 right-8 p-8 rounded-3xl bg-white/90 backdrop-blur-md shadow-xl border border-white">
               <div className="flex gap-4 items-center">
@@ -326,7 +325,7 @@ export default function LandingPage() {
                 className={`relative group rounded-3xl overflow-hidden ${item.image ? "bg-slate-900" : `bg-gradient-to-br ${item.bg}`} aspect-square`}
               >
                 {item.image ? (
-                  <Image src={item.image} alt={item.label} fill className="object-cover" />
+                  <img src={item.image} alt={item.label} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center opacity-15">
                     <Camera className="w-12 h-12 text-white" />
