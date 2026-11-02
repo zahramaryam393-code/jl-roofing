@@ -172,7 +172,7 @@ export function FloatingContact() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex shadow-[0_-5px_25px_rgba(0,0,0,0.35)]">
         <a
           href={PHONE_URL}
-          className="fc-shimmer relative flex-1 flex items-center justify-center gap-3 py-4 bg-[#0F172A] text-white font-semibold overflow-hidden transition-all duration-300 hover:bg-[#1e293b] active:scale-95"
+          className="fc-shimmer relative flex-1 flex items-center justify-center gap-3 py-5 bg-[#0F172A] text-white font-semibold overflow-hidden transition-all duration-300 hover:bg-[#1e293b] active:scale-95"
         >
           <span className="fc-wiggle flex">
             <PhoneIcon />
