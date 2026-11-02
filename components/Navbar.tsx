@@ -24,6 +24,7 @@ const allNavItems = [
       { name: "Roof Cleaning", href: "/services/roof-cleaning" },
       { name: "Roof Inspection", href: "/services/roof-inspection" },
       { name: "Pointing & Brickwork", href: "/services/pointing" },
+      { name: "New Roofing", href: "/services/new-roofing" },
     ],
   },
 ]

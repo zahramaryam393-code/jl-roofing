@@ -97,6 +97,16 @@ const services = [
     description: "Restoring the mortar between your bricks or tiles to prevent moisture penetration and structural issues.",
     features: ["Wall Repointing", "Ridge Tile Pointing", "Gable Repairs", "Brick Replacement"],
     variant: "muted"
+  },
+  {
+    title: "New Roofing",
+    slug: "new-roofing",
+    href: "/services/new-roofing",
+    image: "/028.jpg",
+    icon: <Home className="w-12 h-12" />,
+    description: "A complete new roof for your home, extension, or new build, from the first survey to the final clean-up.",
+    features: ["Full Re-Roofs", "New Builds", "Extensions", "Slate & Tile Roofing"],
+    variant: "default"
   }
 ]
 
@@ -184,10 +194,17 @@ export default function ServicesPage() {
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" className="font-semibold group border-slate-300" asChild>
-                  <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
-                    Learn More
-                    <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  {service.href ? (
+                    <Link href={service.href}>
+                      Learn More
+                      <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : (
+                    <a href="https://wa.me/447486494947" target="_blank" rel="noopener noreferrer">
+                      Learn More
+                      <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  )}
                 </Button>
               </div>
             </div>
