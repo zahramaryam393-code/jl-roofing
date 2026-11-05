@@ -11,6 +11,7 @@ const services = [
   {
     title: "Roof Installation",
     slug: "roof-installation",
+    href: "/services/roof-installation1",
     image: "/001.jpg",
     icon: <Home className="w-12 h-12" />,
     description: "Expert installation of new roofs using high-quality slate, tile, or modern materials. Built to last with long-term guarantees.",
@@ -216,6 +217,24 @@ export default function ServicesPage() {
           </div>
         </Section>
       ))}
+
+      {/* Roof replacement callout */}
+      <Section variant="muted">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 rounded-[2.5rem] bg-primary text-white p-8 md:p-12">
+          <div className="max-w-2xl space-y-3">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">Tired of roof leaks and costly repairs?</h2>
+            <p className="text-white/70 font-medium leading-relaxed">
+              Find out whether your old roof needs repairing or replacing with a FREE roof inspection and an honest, no-obligation roof replacement quote.
+            </p>
+          </div>
+          <Button size="lg" className="font-semibold group shrink-0" asChild>
+            <Link href="/services/roof-replacement">
+              Explore Roof Replacement
+              <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </div>
+      </Section>
 
       {/* How It Works */}
       <Section variant="dark" className="bg-secondary">
