@@ -15,7 +15,6 @@ import {
   Star,
 } from "lucide-react"
 import { FaqAccordion } from "@/components/FaqAccordion"
-import { Footer } from "@/components/Footer"
 import { LeadForm } from "@/components/roof-installation/LeadForm"
 import { Button } from "@/components/ui/button"
 
@@ -453,7 +452,6 @@ export default function RoofReplacementLandingPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   )
 }

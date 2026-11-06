@@ -15,7 +15,6 @@ import {
   Wrench,
 } from "lucide-react"
 import { FaqAccordion } from "@/components/FaqAccordion"
-import { Footer } from "@/components/Footer"
 import { LeadForm } from "@/components/roof-installation/LeadForm"
 import { Button } from "@/components/ui/button"
 
@@ -445,7 +444,6 @@ export default function RoofInstallationLandingPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   )
 }
