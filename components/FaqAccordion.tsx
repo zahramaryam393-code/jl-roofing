@@ -76,7 +76,7 @@ export function FaqAccordion({ faqs = generalFaqs }: { faqs?: Faq[] }) {
             <div
               className={cn(
                 "overflow-hidden transition-all duration-300",
-                isOpen ? "max-h-96 pb-6" : "max-h-0"
+                isOpen ? "max-h-96 pb-5" : "max-h-0"
               )}
             >
               <p className="text-slate-500 font-medium leading-relaxed">{faq.answer}</p>
