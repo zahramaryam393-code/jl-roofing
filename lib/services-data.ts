@@ -291,6 +291,9 @@ export const servicesData: ServiceData[] = [
       { label: "Algae Treatment Applied", category: "Biocide", bg: "from-zinc-600 to-zinc-800", image: "/roo-cleaning-1.jpg" },
       { label: "Before & After Comparison", category: "Transformation", bg: "from-stone-600 to-stone-800", image: "/roof-cleaning-2.jpg" },
       { label: "Soft Washing in Progress", category: "Soft Wash", bg: "from-slate-500 to-slate-700", image: "/roof-cleaning-3.webp" },
+      { label: "Roof Cleaning in Progress", category: "Roof Cleaning", bg: "from-slate-700 to-slate-900", image: "/WhatsApp Image 2026-11-06 at 1.06.41 AM.jpeg" },
+      { label: "Roof Moss Removal", category: "Moss Removal", bg: "from-zinc-600 to-zinc-800", image: "/WhatsApp Image 2026-11-06 at 1.06.41 AM (1).jpeg" },
+      { label: "Completed Roof Cleaning", category: "Completed Work", bg: "from-stone-600 to-stone-800", image: "/WhatsApp Image 2026-11-06 at 1.06.42 AM.jpeg" },
     ],
     faqs: [
       { question: "Does roof cleaning damage the tiles?", answer: "Not when done correctly with soft washing. High-pressure jet washing can erode tile surfaces and strip away the weatherproofing layer, we never use high-pressure methods on roof tiles." },
